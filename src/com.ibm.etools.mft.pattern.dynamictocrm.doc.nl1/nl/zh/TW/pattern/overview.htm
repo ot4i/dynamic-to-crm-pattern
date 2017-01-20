@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <link rel="stylesheet" type="text/css" href="./css/pattern.css"/>
+   <!-- 
+    (C) COPYRIGHT International Business Machines Corp., 2012
+    All Rights Reserved * Licensed Materials - Property of IBM
+    -->
+        <title>Microsoft Dynamics CRM Account Entity 輸出：動態傳輸輸入型樣</title>
+    </head>
+    <body>
+        <h1 class="topictitle1">Microsoft Dynamics CRM Account Entity 輸出：動態傳輸輸入型樣</h1>
+
+        <div>
+            <p class="shortdesc"></p>
+        </div>
+        <p>使用 Microsoft Dynamics CRM Account Entity 輸出：動態傳輸輸入型樣來處理使用者定義的 MQ、「檔案」或 HTTP 輸入訊息，並將它們對映至對標準 Microsoft Dynamics CRM Account Entity 上的「建立」、「擷取」及「刪除」作業。</p>
+		
+		<p>使用此型樣的時機如下：</p>
+		<ul>
+		<li>
+您需要 MQ、「檔案」及 HTTP 傳輸，以在 Microsoft Dynamics CRM 中的 Account Entity 上操作。
+</li>
+</ul>
+
+        <p>當您建立此型樣的實例時，可以選擇 MQ、「檔案」或 HTTP 傳輸來使用下列四個作業的任一組合：建立、擷取、更新及刪除。應用程式具有下列功能：</p>
+	<ul>
+		<li>當接收到 MQ/檔案/HTTP 建立事件時，建立並移入 Microsoft Dynamics CRM Account Entity。</li>
+		<li>當接收到 MQ/檔案/HTTP 接收事件時，讀取 Microsoft Dynamics CRM Account Entity 並傳回資料。</li>
+		<li>當接收到 MQ/檔案/HTTP 更新事件時，更新 Microsoft Dynamics CRM Account Entity。</li>
+		<li>當接收到 MQ/檔案/HTTP 刪除事件時，刪除 Microsoft Dynamics CRM Account Entity。</li>
+	</ul>
+
+    <div class="image">
+        <img src="DynamicInputCRMPattern.gif" alt="顯示型樣行為的圖表。MQ/檔案/HTTP 事件作為「建立」、「擷取」、「更新」或「刪除」作業轉換並發出至 Microsoft Dynamics CRM。"/>
+    </div>
+
+        <div class="section">
+            <h2 class="sectiontitle">解決方案</h2>
+        </div>
+	<p>實作應用程式、檔案庫及 .NET 專案的解決方案。<ul>
+	<li>應用程式包含訊息流程，提供 MQ、「檔案」或 HTTP 輸入節點來接收「建立」、「擷取」、「更新」及「刪除」事件，並使用圖形資料對映，將它們對映至相對的 Microsoft Dynamics CRM Account Entity 資料。對映的輸入物件由型樣編輯器中每一個作業的輸入廣域元素指定。</li>
+	<li>訊息流程會呼叫連接至 Microsoft Dynamics CRM 的 .NETCompute 節點，並實作早期連結程式設計樣式，從「對映」節點傳送 Account Entity 資料。.NETCompute 節點接收到的 CRM 回應資料會傳遞至其他「對映」節點。「對映」節點使用其他圖形資料對映，將資料轉換為特定格式。使用者在輸出綱目中指定此格式，使用型樣編輯器，將回應傳回至相對的 MQ 或「檔案」輸出節點或「HTTP 回覆」節點。</li>
+	<li>檔案庫包含使用者選擇以供應用程式參照的綱目檔，以及所有對映檔。使用者也可以選擇參照工作區中的其他檔案庫，以使用那些檔案庫內的綱目。</li>
+	<li>.NET 專案包含組件檔及相對配置檔，供應用程式中的 .NETCompute 節點使用。</li>
+	</ul>
+	</p>
+<p>如果您配置型樣實例以啟用錯誤訊息，則解決方案會提供通用錯誤處理邏輯。如果訊息流程輸入節點捕捉到異常狀況，則錯誤處理子流程會建構一則錯誤訊息，並將訊息放置於追蹤和 "ERROR" 佇列。
+</p>
+
+	<p>Microsoft Dynamics CRM 系統的連線詳細資料是由訊息流程上使用者定義的內容進行配置。請注意，將以明碼設定密碼。</p>
+		<div class="familylinks">
+			<a name="anchorBack"></a>
+			<div class="section">
+				<h2 class="sectiontitle">相關作業</h2>
+			</div>
+			<p>如需如何套用及使用此型樣的相關資訊，請閱讀下節。</p>
+		</div>
+		<div>
+            <a href="constraints.htm" title="使用型樣的限制。">使用型樣的限制</a></div>
+		<div>
+			<a href="before.htm">套用型樣之前要完成的作業</a>
+		</div>
+		<div>
+			<a href="parameters.htm">型樣的參數</a>
+		</div>
+		<div>
+            <a href="after.htm" title="">產生型樣之後要完成的作業</a>
+        </div>
+		
+    </body>
+</html>

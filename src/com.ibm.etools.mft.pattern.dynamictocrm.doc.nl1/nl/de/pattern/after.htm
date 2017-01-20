@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de-de" xml:lang="de-de">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="copyright" content="Copyright IBM Corporation 2011"/>
+    <link rel="stylesheet" type="text/css" href="./css/pattern.css"/>
+    <!-- 
+    (C) COPYRIGHT International Business Machines Corp., 2012
+    All Rights Reserved * Licensed Materials - Property of IBM
+    -->
+
+	<title>Erforderliche Tasks nach der Anwendung des Musters 'Microsoft Dynamics CRM Account Entity output: Dynamic transport input'</title>
+</head>
+<body id="com.ibm.etools.mft.pattern.eis.sap.idocfanout.before">
+	<h1 class="topictitle1">Erforderliche Tasks nach der Anwendung des Musters <span>Microsoft Dynamics CRM Account Entity output: Dynamic transport input</span> 	</h1>
+	<p class="shortdesc">Nach der Generierung des Musters muss es konfiguriert werden.</p>
+	<ol>
+		<li>
+			Vervollständigen Sie die grafischen Zuordnungen:
+			<ol>
+				<li>
+					Dazu öffnen Sie nach der erstmaligen Generierung einer Musterinstanz die Datei <span class="filepath">Summary.html</span>. Sie müssen die CRMReturn-Daten mithilfe der aufgelisteten Links der grafischen Zuordnungsdateien den entsprechenden Ausgabedaten zuordnen. Die Zuordnungsdateien werden nach dem bei der Musterkonfiguration ausgewählten Eingabe- und Ausgabeschema generiert.
+				</li>
+				<li>
+					Optional: Wenn Sie die Musterkonfiguration nach der Generierung der Musterinstanz durch Auswahl einer anderen Schemadatei oder eines anderen globalen Elements ändern und erneut auf <span class="uicontrol">Generieren</span> klicken, wird die zugehörige Zuordnungsdatei gelöscht und auf Basis der aktualisierten Musterkonfiguration wird eine neue Zuordnungsdatei erstellt. 
+					<p>In diesem Fall müssen Sie die Zuordnungen erneut verlinken. Falls dem unveränderten Schema Zuordnungsdateien zugeordnet sind, werden diese standardmäßig nicht geändert. Sie können einstellen, ob diese Dateien beibehalten oder überschrieben werden. Nach der Generierung können Sie der Datei <span class="filepath">Summary.html</span> entnehmen, welche Zuordnungsdateien überschrieben wurden und welche sich nicht geändert haben. Sie müssen alle Zuordnungen vervollständigen.</p>
+				</li>
+			</ol>
+		</li>
+		<li>Die Anwendung, die Bibliothek und das .NET-Projekt müssen Sie einer Brokerarchivdatei (BAR-Datei) hinzufügen. Zur Erstellung der BAR-Datei gehen Sie wie folgt vor:
+			<ul>
+				<li>Klicken Sie auf <span class="uicontrol">Datei &gt; Neu &gt; BAR-Datei</span>.</li>
+				<li>Geben Sie den Namen Ihrer Anwendung ein oder wählen Sie eine aus der angezeigten Liste aus. Die Liste ist gefiltert. Sie zeigt nur die Projekte des aktiven Arbeitsbereichs an.</li>
+				<li>Geben Sie einen Namen für die BAR-Datei ein.</li>
+				<li>Klicken Sie auf <span class="uicontrol">Fertigstellen</span>. Dadurch wird eine Datei mit der Erweiterung <span class="filepath">.bar</span> erstellt und in der Navigatoransicht im Ordner 'Brokerarchive' angezeigt. Der Editor für die Brokerarchivdatei wird geöffnet.</li>
+			</ul></li>
+		<li>Optional: Sie können alle konfigurierbaren Eigenschaften im Brokerarchiv ändern, zum Beispiel Sicherheitseigenschaften oder Eigenschaften zur Erstellung weiterer Instanzen.                 
+            <p>Allerdings müssen Sie sicherstellen, dass sich die von Ihnen geänderten Werte nicht auf das Verhalten der Musterinstanz auswirken.</p>
+			<p>Hinweis: Die Verbindungsberechtigungsnachweise für das Microsoft CRM-System werden als
+benutzerdefinierte Eigenschaften des Flusses in der BAR-Datei konfiguriert und sind in Klartext
+anzeigbar.</p>
+			<p>Konfigurieren Sie die Nachrichtenflusseigenschaften in der Brokerarchivdatei. Eine weitere Konfiguration des
+Nachrichtenflusses in der Brokerarchivdatei ist zwar nicht erforderlich, bevor Sie die
+Nachrichtenflüsse für Ihre Instanz des Musters <span>Microsoft Dynamics CRM Account Entity output: Dynamic transport input</span> implementieren, aber Sie können einige Standardoptionen überprüfen und
+Änderungen für Ihre Umgebung konfigurieren.</p></li>
+			
+		<li>Erstellen Sie <span>WebSphere MQ</span>-Nachrichtenwarteschlangen. Falls keine Nachrichtenwarteschlangen für MQ-Transport- und Fehlerprotokollnachrichten vorhanden sind, müssen diese erstellt werden. <span>WebSphere MQ</span>-Nachrichtenwarteschlangen können über die Befehlszeile mithilfe von Programmen und Dienstprogrammen wie
+<span class="cmdname">runmqsc</span> oder mithilfe der grafischen Oberfläche von <span>WebSphere MQ</span> Explorer erstellt werden. Weitere Informationen zur Erstellung von <span>WebSphere MQ</span>-Nachrichtenwarteschlangen finden Sie im Artikel <cite><span>WebSphere MQ</span> Intercommunication</cite> der WebSphere MQ-Online-Bibliothek.</li>
+		
+		<li>Implementieren Sie die BAR-Datei in einer Ausführungsgruppe.</li>
+		<li>Wenn Sie zur Benachrichtigung bei Fehlern Fehlernachrichten konfiguriert haben, müssen Sie die Fehlerwarteschlange überwachen und ihren Inhalt löschen.</li>
+	</ol>
+	<p />
+	<p class="shortdesc">Nach der Generierung und Ausführung des Musters können Sie folgende optionale Tasks ausführen:</p>
+	<ul>
+		<li>Zur Unterscheidung verschiedener Operationen verwendet der Nachrichtenfluss zurzeit für die Eingabewarteschlangen unterschiedliche Namen, Dateiverzeichnisse und URL-Suffixe. Sie können den Nachrichtenfluss so ändern, dass für jeden Transport nur ein Empfangsknoten verwendet wird. Diesem Empfangsknoten können Sie einen Filter- oder Rechenknoten nachschalten, der entsprechend Ihrer Geschäftsanforderungen entscheidet, welche Operation die eingegangene Nachricht im Microsoft Dynamics CRM-System veranlasst.
+		</li>
+		<li>Die vom Muster erstellte Nachrichtenflussinstanz verarbeitet nur die Standardattribute der Microsoft Dynamics CRM-Accountentität. Wenn Sie für die CRM-Accountentitäten Ihres CRM-Systems benutzerdefinierte Attribute hinzugefügt haben und diese in Erstellungs-, Abruf- oder Aktualisierungsoperationen einschließen möchten, müssen Sie sowohl die grafischen Datenzuordnungen als auch die .NETCompute-Knoten erweitern. Hierzu gehen Sie wie folgt vor:
+			<ol>
+				<li>Fügen Sie den CRM-Accountdatenmodellen die benutzerdefinierten Attribute hinzu. Die Daten werden durch das in der erstellten Anwendung installierte XML-Schema vorgegeben.</li>
+				<li>Erweitern Sie den C#-Code des .NETCompute-Knotens so, dass er die benutzerdefinierten Attribute einstellen und abrufen kann. Dadurch erstellen Sie im Verzeichnis <span class="filepath">VisualStudioSource</span> in der Kategorie <span class="uicontrol">other resources</span> (Andere Ressourcen) der Anwendung eine <span class="filepath">.zip</span>-Datei, die das Microsoft Visual Studio-Projekt mit dem Quellcode der .NETCompute-Knoten enthält.</li>
+				<li>Erweitern Sie die grafische Datenzuordnung auf den Zuordnungsknoten, sodass sie die
+Eingabedaten mithilfe der zusätzlichen angepassten Attribute im aktualisierten Schema für das
+Datenformat der Microsoft Dynamics CRM-Accountentität transformieren.</li>
+			</ol>
+		</li>
+	</ul>
+
+	<p>
+		<a href="overview.htm" title="Zurück">Zurück zum Muster 'Microsoft Dynamics CRM Account Entity output: Dynamic transport input'</a>
+	</p>
+</body>
+</html>

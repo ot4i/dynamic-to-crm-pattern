@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-us" xml:lang="en-us">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="copyright" content="Copyright IBM Corporation 2011"/>
+    <link rel="stylesheet" type="text/css" href="./css/pattern.css"/>
+    <!-- 
+    (C) COPYRIGHT International Business Machines Corp., 2012
+    All Rights Reserved * Licensed Materials - Property of IBM
+    -->
+    <title>Constraints on using the Microsoft Dynamics CRM Account Entity output: Dynamic transport input pattern</title>
+</head>
+<body>
+    <h1 class="topictitle1">Constraints on using the Microsoft Dynamics CRM Account Entity output: Dynamic transport input pattern</h1>
+    <div>
+    <p class="shortdesc">A number of constraints apply when you use this pattern.</p>
+        <p>
+        You can use the Microsoft Dynamics CRM Account Entity output: Dynamic transport input pattern only if you meet all of the following criteria:
+        </p>
+        <ul> 
+            <li>
+				The pattern can only be deployed and run on brokers in Microsoft Windows environments, because the .NETCompute node is dependent on the .NET Framework for connectivity to Microsoft Dynamics CRM Systems. 
+			</li>
+			<li>
+							The message flow instance and BAR file contain the Microsoft Dynamics CRM connection credentials in clear text. If this is not suitable for your security requirements, you must modify the message flow so that the .NETCompute nodes can obtain these details by a secure mechanism. For more information, see <a href="before.htm">Tasks to complete before applying the Microsoft Dynamics CRM Account Entity output: Dynamic transport input pattern</a>.
+			</li>
+			<li>
+				The message flow instance can set and get only the standard attributes on the Microsoft Account Entity. You can modify and extend the flow instance created by the pattern for custom attributes. For information, see <a href="before.htm">Tasks to complete before applying the Microsoft Dynamics CRM Account Entity output: Dynamic transport input pattern</a>.
+			</li>
+          </ul>
+          </div> 
+    <p>
+        <a href="overview.htm#anchor1" title="Back">Microsoft Dynamics CRM Account Entity output: Dynamic transport input pattern specification</a>
+    </p>
+</body>
+</html>

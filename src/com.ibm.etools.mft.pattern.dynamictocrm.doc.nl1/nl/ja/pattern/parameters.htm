@@ -1,0 +1,654 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja-jp" xml:lang="ja-jp">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="copyright" content="Copyright IBM Corporation 2013"/>
+    <link rel="stylesheet" type="text/css" href="./css/pattern.css"/>
+    <!-- 
+    (C) COPYRIGHT International Business Machines Corp., 2013
+    All Rights Reserved * Licensed Materials - Property of IBM
+    -->
+	
+	<meta name="abstract" content="「Microsoft Dynamics CRM Account Entity 出力: 動的トランスポート入力」パターンのパラメーター定義の表"/>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+	<link rel="stylesheet" type="text/css" href="../css/general.css"/>
+	<title>「Microsoft	Dynamics CRM Account Entity 出力: 動的トランスポート入力」パターン用のパターン・パラメーター</title>	
+	<script language="JavaScript" src="../help/actions.js"></script>
+	
+	<!-- START NON-TRANSLATABLE -->
+	<script language="JavaScript">
+	<!--
+
+	function getParameter(location, name) {
+		name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
+		var search = "[\\?&]" + name + "=([^&#]*)";
+		var regex = new RegExp(search);
+		var results = regex.exec(location);
+		return (results == null ? true : (results[1] == "false" ? false : true));
+	}
+	
+	function addStyleSheet() {
+		if (getParameter(window.location.href, "everything") == false) {
+			var headId = document.getElementsByTagName("head")[0];         
+			var cssNode = document.createElement("link");
+			cssNode.type = "text/css";
+			cssNode.rel = "stylesheet";
+			cssNode.href = "../css/patterns.css";
+			cssNode.media = "screen";
+			headId.appendChild(cssNode);
+		}
+	}
+		
+	addStyleSheet(); // Depends on the query string!
+	
+	function getElementsByStyleClass (className) {
+  		var all = document.all ? document.all :
+    	document.getElementsByTagName('*');
+  		var elements = new Array();
+  		
+  		for (var e = 0; e < all.length; e++) {
+    		if (all[e].className == className) {
+      			elements[elements.length] = all[e];
+      		}
+      	}
+ 		return elements;
+	}
+	
+	function collapseAll() {
+		var elements = getElementsByStyleClass('twisty');
+		for (var e = 0; e < elements.length; e++) {
+			changeTwisty(elements[e], 'TWISTIE.COLLAPSEALL');
+		}
+	}
+	
+	function expandAll() {
+		var elements = getElementsByStyleClass('twisty');
+		for (var e = 0; e < elements.length; e++) {
+			changeTwisty(elements[e], 'TWISTIE.EXPANDALL');
+		}
+	}
+	
+	function toggleTwisty(group) {
+		changeTwisty(group, 'TWISTIE.TOGGLE');
+		if (typeof kc === "object" && typeof kc.resize === "function") kc.resize();
+	}
+
+	function changeTwisty(group, mode) {		
+		whichGroupId = group.parentNode.id;
+
+		whichGroupContainerId = whichGroupId + "Container";
+		whichGroupTwistyId = whichGroupId + "Twisty";
+		whichGroupTwistyImageId = whichGroupId + "Arrow";
+		groupContainerObj = document.getElementById(whichGroupContainerId);
+		twistyArrowContainerObj = document.getElementById(whichGroupTwistyId);
+		twistyArrowImageObj = document.getElementById(whichGroupTwistyImageId);
+		group.parentNode.style.height = "auto";
+
+		var toShow = false;
+		
+		if (mode == 'TWISTIE.TOGGLE') {
+			if (groupContainerObj.style.display == "none" || groupContainerObj.style.display == "") {
+				toShow = true;
+			} else {
+				toShow = false;
+			}
+		} else if (mode == 'TWISTIE.EXPANDALL') {
+			toShow = true;
+		}
+		
+		if (toShow) {
+			groupContainerObj.style.visibility = "visible";
+			groupContainerObj.style.display = "block";
+			twistyArrowImageObj.src = '../images/twistyopen.png'
+			group.parentNode.style.height = (groupContainerObj.offsetHeight + 30) +'px'; 
+	
+		} else {
+			groupContainerObj.style.visibility = "hidden";
+			groupContainerObj.style.display = "none";
+			twistyArrowImageObj.src = '../images/twistyclosed.png'
+		}
+	
+	}
+	//-->
+	</script>
+	<!-- END NON-TRANSLATABLE -->
+</head>
+<body id="com.ibm.etools.mft.pattern.dynamictocrm.pattern.parametertable">
+	<!-- Page main title -->
+  	<div id="title" class="invisible">
+		<h1 class="patterns-title">「<span>Microsoft Dynamics CRM Account Entity 出力: 動的トランスポート入力</span>」パターンのパラメーター</h1>
+  	</div>
+
+
+	
+		
+
+			
+	
+			<div class="box first">
+				<div class="TitleBox"><!-- --></div>
+				<div class="FooterBox"><!-- --></div>
+				<div class="TL"><!-- --></div>
+				<div class="TR"><!-- --></div>
+				<div class="BL"><!-- --></div>
+				<div class="BR"><!-- --></div>
+				<div class="ContentBox">
+					<div class="border">
+						<div class="groupBox" id="Id13c181831374f0d9f1c923155b7">
+							<div class="twisty" onmouseup="toggleTwisty(this)" onkeyup="toggleTwisty(this)" role="menubar" id="Id13c181831374f0d9f1c923155b7Twisty">
+								<img src="../images/twistyclosed.png"
+									name="b" id="Id13c181831374f0d9f1c923155b7Arrow" alt=""></img>
+							</div>
+							<div class="twistyTitle" onmouseup="toggleTwisty(this)" onkeyup="toggleTwisty(this)" tabindex="0" role="menubar">操作の選択</div>
+							
+							
+
+									
+							
+							<div style="visibility: hidden; display: none;" class="groupBoxContainer" id="Id13c181831374f0d9f1c923155b7Container">
+									<div class="tablenoborder">
+										<table summary="" width="100%" border="1" cellpadding="4" cellspacing="0" frame="border" rules="all">
+											<thead align="left">
+												<tr>
+													  <th class="firstcol" align="left" valign="top" width="*">パターン・パラメーター</th>
+													  <th class="invisible" valign="top" width="*">デフォルト
+</th>
+													  <th valign="top" width="*">説明</th>
+												</tr>
+											</thead>
+											<tbody>
+
+														<tr>
+															<th align="left" valign="top" width="*" class="firstcol">
+																操作
+															</th>
+															<td valign="top" width="2*" class="invisible">
+																				
+															</td>
+															<td valign="top" width="*">
+																<p>「作成」、「取得」、「更新」、および「削除」から 1 つ以上の操作を選択します。パターンを生成した後で、関連するメッセージ・フローを含めることができます。少なくとも 1 つの操作を選択する必要があります。</p>
+															</td>
+														</tr>
+											</tbody>
+										</table>
+								  	</div>
+								
+
+						  	</div>
+				  		</div>
+			  		</div>
+				</div>
+			</div>
+
+	
+		
+
+			
+
+			
+	
+			<div class="box first">
+				<div class="TitleBox"><!-- --></div>
+				<div class="FooterBox"><!-- --></div>
+				<div class="TL"><!-- --></div>
+				<div class="TR"><!-- --></div>
+				<div class="BL"><!-- --></div>
+				<div class="BR"><!-- --></div>
+				<div class="ContentBox">
+					<div class="border">
+						<div class="groupBox" id="Id13b64c9045cf5451b09f6f1baee">
+							<div class="twisty" onmouseup="toggleTwisty(this)" onkeyup="toggleTwisty(this)" role="menubar" id="Id13b64c9045cf5451b09f6f1baeeTwisty">
+								<img src="../images/twistyclosed.png"
+									name="b" id="Id13b64c9045cf5451b09f6f1baeeArrow" alt=""></img>
+							</div>
+							<div class="twistyTitle" onmouseup="toggleTwisty(this)" onkeyup="toggleTwisty(this)" tabindex="0" role="menubar">パターン入力トランスポート</div>
+							
+							
+
+									
+
+									
+							
+							<div style="visibility: hidden; display: none;" class="groupBoxContainer" id="Id13b64c9045cf5451b09f6f1baeeContainer">
+									<div class="tablenoborder">
+										<table summary="" width="100%" border="1" cellpadding="4" cellspacing="0" frame="border" rules="all">
+											<thead align="left">
+												<tr>
+													  <th class="firstcol" align="left" valign="top" width="*">パターン・パラメーター</th>
+													  <th class="invisible" valign="top" width="*">デフォルト
+</th>
+													  <th valign="top" width="*">説明</th>
+												</tr>
+											</thead>
+											<tbody>
+
+														<tr>
+															<th align="left" valign="top" width="*" class="firstcol">
+																入力トランスポート
+															</th>
+															<td valign="top" width="2*" class="invisible">
+																				
+															</td>
+															<td valign="top" width="*">
+																<p>「MQ」、「ファイル」、および「HTTP」の 3 つのトランスポートから 1 つを選択して、下記の「トランスポート詳細」で関連する詳細を構成します。</p>
+															</td>
+														</tr>
+
+														<tr>
+															<th align="left" valign="top" width="*" class="firstcol">
+																トランスポート詳細
+															</th>
+															<td valign="top" width="2*" class="invisible">
+																				
+															</td>
+															<td valign="top" width="*">
+																<p>選択したトランスポートおよび操作に基づいてトランスポートの詳細を入力します。MQ トランスポートの場合は入力キュー名、ファイル・トランスポートの場合は入力ディレクトリー、および HTTP トランスポートの場合は URL 接尾部を指定する必要があります。</p>
+															</td>
+														</tr>
+											</tbody>
+										</table>
+								  	</div>
+								
+
+
+						  	</div>
+				  		</div>
+			  		</div>
+				</div>
+			</div>
+
+	
+		
+
+			
+	
+			<div class="box first">
+				<div class="TitleBox"><!-- --></div>
+				<div class="FooterBox"><!-- --></div>
+				<div class="TL"><!-- --></div>
+				<div class="TR"><!-- --></div>
+				<div class="BL"><!-- --></div>
+				<div class="BR"><!-- --></div>
+				<div class="ContentBox">
+					<div class="border">
+						<div class="groupBox" id="Id13b64c6da7588bdb30c409bff52">
+							<div class="twisty" onmouseup="toggleTwisty(this)" onkeyup="toggleTwisty(this)" role="menubar" id="Id13b64c6da7588bdb30c409bff52Twisty">
+								<img src="../images/twistyclosed.png"
+									name="b" id="Id13b64c6da7588bdb30c409bff52Arrow" alt=""></img>
+							</div>
+							<div class="twistyTitle" onmouseup="toggleTwisty(this)" onkeyup="toggleTwisty(this)" tabindex="0" role="menubar">ユーザー入力スキーマ構成</div>
+							
+							
+
+									
+							
+							<div style="visibility: hidden; display: none;" class="groupBoxContainer" id="Id13b64c6da7588bdb30c409bff52Container">
+									<div class="tablenoborder">
+										<table summary="" width="100%" border="1" cellpadding="4" cellspacing="0" frame="border" rules="all">
+											<thead align="left">
+												<tr>
+													  <th class="firstcol" align="left" valign="top" width="*">パターン・パラメーター</th>
+													  <th class="invisible" valign="top" width="*">デフォルト
+</th>
+													  <th valign="top" width="*">説明</th>
+												</tr>
+											</thead>
+											<tbody>
+
+														<tr>
+															<th align="left" valign="top" width="*" class="firstcol">
+																スキーマ構成
+															</th>
+															<td valign="top" width="2*" class="invisible">
+																				
+															</td>
+															<td valign="top" width="*">
+																<p>選択した操作に対して、入力および出力のメッセージ・スキーマとグローバル・エレメントを指定します。</p>
+<p>入力に対して選択したグローバル・エレメントは、関連マップ・ファイルで入力オブジェクトとして使用されます。例えば、「作成」操作を選択して入力スキーマとグローバル・エレメントを指定する場合、グローバル・エレメントは、「Create.map」ファイルの入力オブジェクトとして使用されます。グローバル・エレメントとして CRMCreate が入っている CRMCreate スキーマは、出力オブジェクトとして使用されます。</p>
+<p>出力に対して選択したグローバル・エレメントは、関連マップ・リターン・ファイルで出力オブジェクトとして使用されます。例えば、「作成」操作に対して出力スキーマとグローバル・エレメントを指定した場合、グローバル・エレメントは、「CreateReturn.map」ファイルの出力オブジェクトとして使用されます。グローバル・エレメントとして CRMCreate が入っている CRMCreate スキーマは、入力オブジェクトとして使用されます。</p>
+															</td>
+														</tr>
+											</tbody>
+										</table>
+								  	</div>
+								
+
+						  	</div>
+				  		</div>
+			  		</div>
+				</div>
+			</div>
+
+	
+		
+
+			
+
+			
+
+			
+
+			
+	
+			<div class="box first">
+				<div class="TitleBox"><!-- --></div>
+				<div class="FooterBox"><!-- --></div>
+				<div class="TL"><!-- --></div>
+				<div class="TR"><!-- --></div>
+				<div class="BL"><!-- --></div>
+				<div class="BR"><!-- --></div>
+				<div class="ContentBox">
+					<div class="border">
+						<div class="groupBox" id="Id13bd5ae4ddd7c8beb4dd9a64042">
+							<div class="twisty" onmouseup="toggleTwisty(this)" onkeyup="toggleTwisty(this)" role="menubar" id="Id13bd5ae4ddd7c8beb4dd9a64042Twisty">
+								<img src="../images/twistyclosed.png"
+									name="b" id="Id13bd5ae4ddd7c8beb4dd9a64042Arrow" alt=""></img>
+							</div>
+							<div class="twistyTitle" onmouseup="toggleTwisty(this)" onkeyup="toggleTwisty(this)" tabindex="0" role="menubar">CRM 接続</div>
+							
+							
+
+									
+
+									
+
+									
+
+									
+							
+							<div style="visibility: hidden; display: none;" class="groupBoxContainer" id="Id13bd5ae4ddd7c8beb4dd9a64042Container">
+									<div class="tablenoborder">
+										<table summary="" width="100%" border="1" cellpadding="4" cellspacing="0" frame="border" rules="all">
+											<thead align="left">
+												<tr>
+													  <th class="firstcol" align="left" valign="top" width="*">パターン・パラメーター</th>
+													  <th class="invisible" valign="top" width="*">デフォルト
+</th>
+													  <th valign="top" width="*">説明</th>
+												</tr>
+											</thead>
+											<tbody>
+
+														<tr>
+															<th align="left" valign="top" width="*" class="firstcol">
+																CRM 組織 URL
+															</th>
+															<td valign="top" width="2*" class="invisible">
+																				
+															</td>
+															<td valign="top" width="*">
+																<p>このパターン・パラメーターは、CRM システムの組織サービス URL を定義します。
+これは、組織サービスの完全 URL でなければなりません。
+例えば、CRM オンプレミスにアクセスする場合は http://ipaddress:port/orgName/XRMServices/2011/Organization.svc、CRM オンラインにアクセスする場合は https://orgName.crm.dynamics.com/XRMServices/2011/Organization.svc のようにします。</p>
+															</td>
+														</tr>
+
+														<tr>
+															<th align="left" valign="top" width="*" class="firstcol">
+																CRM ユーザー名
+															</th>
+															<td valign="top" width="2*" class="invisible">
+																				
+															</td>
+															<td valign="top" width="*">
+																<p>このパターン・パラメーターは、CRM システムで使用された CRM ユーザー名を記述します。</p>
+															</td>
+														</tr>
+
+														<tr>
+															<th align="left" valign="top" width="*" class="firstcol">
+																CRM ユーザー・パスワード
+															</th>
+															<td valign="top" width="2*" class="invisible">
+																				
+															</td>
+															<td valign="top" width="*">
+																<p>このパターン・パラメーターは、指定された CRM ユーザーのパスワードを定義します。</p>
+															</td>
+														</tr>
+
+														<tr>
+															<th align="left" valign="top" width="*" class="firstcol">
+																CRM ドメイン
+															</th>
+															<td valign="top" width="2*" class="invisible">
+																				
+															</td>
+															<td valign="top" width="*">
+																<p>このパターン・パラメーターは、使用された CRM ドメインを定義します。</p>
+															</td>
+														</tr>
+											</tbody>
+										</table>
+								  	</div>
+								
+
+
+
+
+						  	</div>
+				  		</div>
+			  		</div>
+				</div>
+			</div>
+
+	
+		
+
+			
+
+			
+
+			
+	
+			<div class="box first">
+				<div class="TitleBox"><!-- --></div>
+				<div class="FooterBox"><!-- --></div>
+				<div class="TL"><!-- --></div>
+				<div class="TR"><!-- --></div>
+				<div class="BL"><!-- --></div>
+				<div class="BR"><!-- --></div>
+				<div class="ContentBox">
+					<div class="border">
+						<div class="groupBox" id="Id13c5c08a1176b7982bafae61c74">
+							<div class="twisty" onmouseup="toggleTwisty(this)" onkeyup="toggleTwisty(this)" role="menubar" id="Id13c5c08a1176b7982bafae61c74Twisty">
+								<img src="../images/twistyclosed.png"
+									name="b" id="Id13c5c08a1176b7982bafae61c74Arrow" alt=""></img>
+							</div>
+							<div class="twistyTitle" onmouseup="toggleTwisty(this)" onkeyup="toggleTwisty(this)" tabindex="0" role="menubar">ロギング
+</div>
+							
+							
+
+									
+
+									
+
+									
+							
+							<div style="visibility: hidden; display: none;" class="groupBoxContainer" id="Id13c5c08a1176b7982bafae61c74Container">
+									<div class="tablenoborder">
+										<table summary="" width="100%" border="1" cellpadding="4" cellspacing="0" frame="border" rules="all">
+											<thead align="left">
+												<tr>
+													  <th class="firstcol" align="left" valign="top" width="*">パターン・パラメーター</th>
+													  <th class="invisible" valign="top" width="*">デフォルト
+</th>
+													  <th valign="top" width="*">説明</th>
+												</tr>
+											</thead>
+											<tbody>
+
+														<tr>
+															<th align="left" valign="top" width="*" class="firstcol">
+																ロギングをオン
+															</th>
+															<td valign="top" width="2*" class="invisible">
+																				クリア済み
+															</td>
+															<td valign="top" width="*">
+このパターン・パラメーターは、ロギング用のサブフローをパターン・インスタンスに含めるかどうかを決定します。
+<p>このパターン・パラメーターが非選択の場合、ロギング・サブフローは含まれません。</p>
+
+<p>このパターン・パラメーターを選択する場合は、「<span class="msobjprop">ログ・キュー・マネージャー</span>」と「<span class="msobjprop">ログ・キュー</span>」の値を設定しなければなりません。</p>
+															</td>
+														</tr>
+
+														<tr>
+															<th align="left" valign="top" width="*" class="firstcol">
+ログ・キュー・マネージャー
+</th>
+															<td valign="top" width="2*" class="invisible">
+																				
+															</td>
+															<td valign="top" width="*">
+このパターン・パラメーターは、ロギングに使用するキュー・マネージャーを定義します。ロギングにブローカー・キュー・マネージャーが使用される場合、このパラメーターをブランクのままにすることができます。
+<p>このパターン・パラメーターは、「<span class="msobjprop">必要なロギング</span>」が選択されている場合にのみ必要です。
+</p>
+															</td>
+														</tr>
+
+														<tr>
+															<th align="left" valign="top" width="*" class="firstcol">
+ログ・キュー
+</th>
+															<td valign="top" width="2*" class="invisible">
+																				
+															</td>
+															<td valign="top" width="*">
+このパターン・パラメーターは、ロギングに使用するキューを定義します。
+<p>このパターン・パラメーターは、「<span class="msobjprop">必要なロギング</span>」が選択されている場合にのみ必要です。
+</p>
+															</td>
+														</tr>
+											</tbody>
+										</table>
+								  	</div>
+								
+
+
+
+						  	</div>
+				  		</div>
+			  		</div>
+				</div>
+			</div>
+
+	
+		
+
+			
+
+			
+
+			
+	
+			<div class="box first">
+				<div class="TitleBox"><!-- --></div>
+				<div class="FooterBox"><!-- --></div>
+				<div class="TL"><!-- --></div>
+				<div class="TR"><!-- --></div>
+				<div class="BL"><!-- --></div>
+				<div class="BR"><!-- --></div>
+				<div class="ContentBox">
+					<div class="border">
+						<div class="groupBox" id="Id13c5c0f824e96b4b34e3c6fe976">
+							<div class="twisty" onmouseup="toggleTwisty(this)" onkeyup="toggleTwisty(this)" role="menubar" id="Id13c5c0f824e96b4b34e3c6fe976Twisty">
+								<img src="../images/twistyclosed.png"
+									name="b" id="Id13c5c0f824e96b4b34e3c6fe976Arrow" alt=""></img>
+							</div>
+							<div class="twistyTitle" onmouseup="toggleTwisty(this)" onkeyup="toggleTwisty(this)" tabindex="0" role="menubar">エラー処理 </div>
+							
+							
+
+									
+
+									
+
+									
+							
+							<div style="visibility: hidden; display: none;" class="groupBoxContainer" id="Id13c5c0f824e96b4b34e3c6fe976Container">
+									<div class="tablenoborder">
+										<table summary="" width="100%" border="1" cellpadding="4" cellspacing="0" frame="border" rules="all">
+											<thead align="left">
+												<tr>
+													  <th class="firstcol" align="left" valign="top" width="*">パターン・パラメーター</th>
+													  <th class="invisible" valign="top" width="*">デフォルト
+</th>
+													  <th valign="top" width="*">説明</th>
+												</tr>
+											</thead>
+											<tbody>
+
+														<tr>
+															<th align="left" valign="top" width="*" class="firstcol">
+																エラー・ロギングをオン
+															</th>
+															<td valign="top" width="2*" class="invisible">
+																				選択済み
+															</td>
+															<td valign="top" width="*">
+このパターン・パラメーターは、キューにエラー・メッセージを入れるためのコードをパターン・インスタンスに含めるかどうかを決定します。
+<p>このパターン・パラメーターを選択する場合は、「<span class="msobjprop">エラー・キュー・マネージャー</span>」および「<span class="msobjprop">エラー・キュー</span>」値を設定する必要があります。
+</p>
+															</td>
+														</tr>
+
+														<tr>
+															<th align="left" valign="top" width="*" class="firstcol">
+エラー・キュー・マネージャー
+</th>
+															<td valign="top" width="2*" class="invisible">
+																				
+															</td>
+															<td valign="top" width="*">
+このパターン・パラメーターは、エラー・ロギングに使用するキュー・マネージャーを定義します。
+<p>このパターン・パラメーターは、「<span class="msobjprop">必要なエラー・メッセージ</span>」が選択されている場合のみ必要です。</p>
+															</td>
+														</tr>
+
+														<tr>
+															<th align="left" valign="top" width="*" class="firstcol">
+エラー・キュー
+</th>
+															<td valign="top" width="2*" class="invisible">
+																				
+															</td>
+															<td valign="top" width="*">
+このパターン・パラメーターは、エラー・メッセージに使用するキューを定義します。
+<p>このパターン・パラメーターは、「<span class="msobjprop">必要なエラー・メッセージ</span>」が選択されている場合のみ必要です。</p>
+															</td>
+														</tr>
+											</tbody>
+										</table>
+								  	</div>
+								
+
+
+
+						  	</div>
+				  		</div>
+			  		</div>
+				</div>
+			</div>
+
+	<div id="footnotes" class="invisible">
+		<div class="box first">
+			<div class="TitleBox"><!-- --></div>
+			<div class="FooterBox"><!-- --></div>
+			<div class="TL"><!-- --></div>
+			<div class="TR"><!-- --></div>
+			<div class="BL"><!-- --></div>
+			<div class="BR"><!-- --></div>
+			<div class="ContentBox">
+				<div class="invisible" >
+					<p class="shortdesc">すべてのパターン・パラメーターとそのデフォルト値をリストします。
+デフォルトが示されていない場合、デフォルト値は空ストリングです。</p>
+				</div>
+				<a href="overview.htm#anchorBack" title="戻る">「Microsoft Dynamics CRM Account Entity 出力: 動的トランスポート入力」パターンの仕様に戻る</a>
+				<p></p>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

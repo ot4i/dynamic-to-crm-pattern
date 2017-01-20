@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es-es" xml:lang="es-es">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="copyright" content="Copyright IBM Corporation 2011"/>
+    <link rel="stylesheet" type="text/css" href="./css/pattern.css"/>
+    <!-- 
+    (C) COPYRIGHT International Business Machines Corp., 2012
+    All Rights Reserved * Licensed Materials - Property of IBM
+    -->
+    <title>Tareas que deben completarse antes de aplicar el patrón
+Salida de entidad de cuenta de Microsoft Dynamics CRM: entrada
+de transporte dinámica</title>
+</head>
+<body>
+    <h1 class="topictitle1">Tareas que deben completarse antes de
+aplicar el patrón Salida de entidad de cuenta de Microsoft Dynamics
+CRM: entrada de transporte dinámica</h1>
+    <div class="p">
+        <p class="shortdesc">Antes de aplicar el patrón para generar una instancia de
+patrón, realice las tareas siguientes:</p>
+    </div>
+    <ul>
+        <li>
+            Asegúrese de que este patrón cumple los requisitos empresariales y puede ser soportado por las aplicaciones de solicitante y de proveedor. 
+        </li>
+        <li>
+   Elija un nombre para la instancia de patrón. Identifique la finalidad de la aplicación de patrón para que pueda elegir un nombre adecuado.
+
+        </li>
+        <li>
+        	Decida qué transporte desea utilizar y prepare las configuraciones detalladas de transporte. Por ejemplo, cree las colas de mensajes necesarias para el transporte WebSphere MQ, cree directorios de archivos de entrada para el transporte de archivos o elija el sufijo de URL para el transporte HTTP.         </li>
+        <li>
+        	Prepare esquemas de entrada y salida para cada operación.
+        </li>
+        <li>
+			Prepare la información de conexión necesaria del sistema
+Microsoft Dynamics CRM. Ésta incluye:
+			<ul>
+				<li>Dominio de CRM</li>
+				<li>URI de CRM</li>
+				<li>Usuario de CRM</li>
+				<li>Contraseña del usuario de CRMU</li>
+			</ul>
+		</li>
+        <li>
+			Decida si necesita mensajes de registro y de error. Si necesita cualquiera de ellos, debe decidir a qué gestor de colas y a qué cola se enviarán los mensajes. Puede
+enviar mensajes a una cola general que utilicen varios flujos de mensajes, o puede utilizar una cola específicamente para la instancia de patrón.
+
+        </li>
+    </ul>
+    <p>
+        <a href="overview.htm#anchor1" title="Volver">Volver al patrón Salida de entidad de
+cuenta de Microsoft Dynamics CRM: entrada de transporte
+dinámica</a>
+    </p>
+</body>
+</html>

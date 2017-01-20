@@ -1,0 +1,665 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de-de" xml:lang="de-de">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="copyright" content="Copyright IBM Corporation 2013"/>
+    <link rel="stylesheet" type="text/css" href="./css/pattern.css"/>
+    <!-- 
+    (C) COPYRIGHT International Business Machines Corp., 2013
+    All Rights Reserved * Licensed Materials - Property of IBM
+    -->
+	
+	<meta name="abstract" content="Tabellen mit Parameterdefinitionen für das Muster 'Microsoft Dynamics CRM Account Entity output: Dynamic transport input'"/>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+	<link rel="stylesheet" type="text/css" href="../css/general.css"/>
+	<title>Musterparameter für das Muster 'Microsoft	Dynamics CRM Account Entity output: Dynamic
+transport input'</title>	
+	<script language="JavaScript" src="../help/actions.js"></script>
+	
+	<!-- START NON-TRANSLATABLE -->
+	<script language="JavaScript">
+	<!--
+
+	function getParameter(location, name) {
+		name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
+		var search = "[\\?&]" + name + "=([^&#]*)";
+		var regex = new RegExp(search);
+		var results = regex.exec(location);
+		return (results == null ? true : (results[1] == "false" ? false : true));
+	}
+	
+	function addStyleSheet() {
+		if (getParameter(window.location.href, "everything") == false) {
+			var headId = document.getElementsByTagName("head")[0];         
+			var cssNode = document.createElement("link");
+			cssNode.type = "text/css";
+			cssNode.rel = "stylesheet";
+			cssNode.href = "../css/patterns.css";
+			cssNode.media = "screen";
+			headId.appendChild(cssNode);
+		}
+	}
+		
+	addStyleSheet(); // Depends on the query string!
+	
+	function getElementsByStyleClass (className) {
+  		var all = document.all ? document.all :
+    	document.getElementsByTagName('*');
+  		var elements = new Array();
+  		
+  		for (var e = 0; e < all.length; e++) {
+    		if (all[e].className == className) {
+      			elements[elements.length] = all[e];
+      		}
+      	}
+ 		return elements;
+	}
+	
+	function collapseAll() {
+		var elements = getElementsByStyleClass('twisty');
+		for (var e = 0; e < elements.length; e++) {
+			changeTwisty(elements[e], 'TWISTIE.COLLAPSEALL');
+		}
+	}
+	
+	function expandAll() {
+		var elements = getElementsByStyleClass('twisty');
+		for (var e = 0; e < elements.length; e++) {
+			changeTwisty(elements[e], 'TWISTIE.EXPANDALL');
+		}
+	}
+	
+	function toggleTwisty(group) {
+		changeTwisty(group, 'TWISTIE.TOGGLE');
+		if (typeof kc === "object" && typeof kc.resize === "function") kc.resize();
+	}
+
+	function changeTwisty(group, mode) {		
+		whichGroupId = group.parentNode.id;
+
+		whichGroupContainerId = whichGroupId + "Container";
+		whichGroupTwistyId = whichGroupId + "Twisty";
+		whichGroupTwistyImageId = whichGroupId + "Arrow";
+		groupContainerObj = document.getElementById(whichGroupContainerId);
+		twistyArrowContainerObj = document.getElementById(whichGroupTwistyId);
+		twistyArrowImageObj = document.getElementById(whichGroupTwistyImageId);
+		group.parentNode.style.height = "auto";
+
+		var toShow = false;
+		
+		if (mode == 'TWISTIE.TOGGLE') {
+			if (groupContainerObj.style.display == "none" || groupContainerObj.style.display == "") {
+				toShow = true;
+			} else {
+				toShow = false;
+			}
+		} else if (mode == 'TWISTIE.EXPANDALL') {
+			toShow = true;
+		}
+		
+		if (toShow) {
+			groupContainerObj.style.visibility = "visible";
+			groupContainerObj.style.display = "block";
+			twistyArrowImageObj.src = '../images/twistyopen.png'
+			group.parentNode.style.height = (groupContainerObj.offsetHeight + 30) +'px'; 
+	
+		} else {
+			groupContainerObj.style.visibility = "hidden";
+			groupContainerObj.style.display = "none";
+			twistyArrowImageObj.src = '../images/twistyclosed.png'
+		}
+	
+	}
+	//-->
+	</script>
+	<!-- END NON-TRANSLATABLE -->
+</head>
+<body id="com.ibm.etools.mft.pattern.dynamictocrm.pattern.parametertable">
+	<!-- Page main title -->
+  	<div id="title" class="invisible">
+		<h1 class="patterns-title">Parameter für das Muster <span>Microsoft Dynamics CRM Account Entity output: Dynamic transport input</span></h1>
+  	</div>
+
+
+	
+		
+
+			
+	
+			<div class="box first">
+				<div class="TitleBox"><!-- --></div>
+				<div class="FooterBox"><!-- --></div>
+				<div class="TL"><!-- --></div>
+				<div class="TR"><!-- --></div>
+				<div class="BL"><!-- --></div>
+				<div class="BR"><!-- --></div>
+				<div class="ContentBox">
+					<div class="border">
+						<div class="groupBox" id="Id13c181831374f0d9f1c923155b7">
+							<div class="twisty" onmouseup="toggleTwisty(this)" onkeyup="toggleTwisty(this)" role="menubar" id="Id13c181831374f0d9f1c923155b7Twisty">
+								<img src="../images/twistyclosed.png"
+									name="b" id="Id13c181831374f0d9f1c923155b7Arrow" alt=""></img>
+							</div>
+							<div class="twistyTitle" onmouseup="toggleTwisty(this)" onkeyup="toggleTwisty(this)" tabindex="0" role="menubar">Operationsauswahl</div>
+							
+							
+
+									
+							
+							<div style="visibility: hidden; display: none;" class="groupBoxContainer" id="Id13c181831374f0d9f1c923155b7Container">
+									<div class="tablenoborder">
+										<table summary="" width="100%" border="1" cellpadding="4" cellspacing="0" frame="border" rules="all">
+											<thead align="left">
+												<tr>
+													  <th class="firstcol" align="left" valign="top" width="*">Musterparameter</th>
+													  <th class="invisible" valign="top" width="*">Standardwert</th>
+													  <th valign="top" width="*">Beschreibung</th>
+												</tr>
+											</thead>
+											<tbody>
+
+														<tr>
+															<th align="left" valign="top" width="*" class="firstcol">
+																Operation
+															</th>
+															<td valign="top" width="2*" class="invisible">
+																				
+															</td>
+															<td valign="top" width="*">
+																<p>Wählen Sie eine oder mehrere der Operationen Erstellen, Abrufen, Aktualisieren
+und Löschen aus. Nach der Generierung des Musters können Sie über entsprechende Nachrichtenflüsse
+verfügen. Sie müssen mindestens eine Operation auswählen.</p>
+															</td>
+														</tr>
+											</tbody>
+										</table>
+								  	</div>
+								
+
+						  	</div>
+				  		</div>
+			  		</div>
+				</div>
+			</div>
+
+	
+		
+
+			
+
+			
+	
+			<div class="box first">
+				<div class="TitleBox"><!-- --></div>
+				<div class="FooterBox"><!-- --></div>
+				<div class="TL"><!-- --></div>
+				<div class="TR"><!-- --></div>
+				<div class="BL"><!-- --></div>
+				<div class="BR"><!-- --></div>
+				<div class="ContentBox">
+					<div class="border">
+						<div class="groupBox" id="Id13b64c9045cf5451b09f6f1baee">
+							<div class="twisty" onmouseup="toggleTwisty(this)" onkeyup="toggleTwisty(this)" role="menubar" id="Id13b64c9045cf5451b09f6f1baeeTwisty">
+								<img src="../images/twistyclosed.png"
+									name="b" id="Id13b64c9045cf5451b09f6f1baeeArrow" alt=""></img>
+							</div>
+							<div class="twistyTitle" onmouseup="toggleTwisty(this)" onkeyup="toggleTwisty(this)" tabindex="0" role="menubar">Muster Eingabetransport</div>
+							
+							
+
+									
+
+									
+							
+							<div style="visibility: hidden; display: none;" class="groupBoxContainer" id="Id13b64c9045cf5451b09f6f1baeeContainer">
+									<div class="tablenoborder">
+										<table summary="" width="100%" border="1" cellpadding="4" cellspacing="0" frame="border" rules="all">
+											<thead align="left">
+												<tr>
+													  <th class="firstcol" align="left" valign="top" width="*">Musterparameter</th>
+													  <th class="invisible" valign="top" width="*">Standardwert</th>
+													  <th valign="top" width="*">Beschreibung</th>
+												</tr>
+											</thead>
+											<tbody>
+
+														<tr>
+															<th align="left" valign="top" width="*" class="firstcol">
+																Eingabetransport
+															</th>
+															<td valign="top" width="2*" class="invisible">
+																				
+															</td>
+															<td valign="top" width="*">
+																<p>Wählen Sie eine der drei Transportmethoden (MQ, Datei und HTTP) aus und
+konfigurieren Sie unten in 'Transportdetails' entsprechende Details.</p>
+															</td>
+														</tr>
+
+														<tr>
+															<th align="left" valign="top" width="*" class="firstcol">
+																Transportdetails
+															</th>
+															<td valign="top" width="2*" class="invisible">
+																				
+															</td>
+															<td valign="top" width="*">
+																<p>Eingabetransportdetails auf Basis der Transportmethode und der Operation, die
+Sie ausgewählt haben. Sie müssen für MQ-Transport den Namen der Eingabewarteschlange, für
+Dateitransport ein Eingabeverzeichnis und für HTTP-Transport das URL-Suffix angeben.</p>
+															</td>
+														</tr>
+											</tbody>
+										</table>
+								  	</div>
+								
+
+
+						  	</div>
+				  		</div>
+			  		</div>
+				</div>
+			</div>
+
+	
+		
+
+			
+	
+			<div class="box first">
+				<div class="TitleBox"><!-- --></div>
+				<div class="FooterBox"><!-- --></div>
+				<div class="TL"><!-- --></div>
+				<div class="TR"><!-- --></div>
+				<div class="BL"><!-- --></div>
+				<div class="BR"><!-- --></div>
+				<div class="ContentBox">
+					<div class="border">
+						<div class="groupBox" id="Id13b64c6da7588bdb30c409bff52">
+							<div class="twisty" onmouseup="toggleTwisty(this)" onkeyup="toggleTwisty(this)" role="menubar" id="Id13b64c6da7588bdb30c409bff52Twisty">
+								<img src="../images/twistyclosed.png"
+									name="b" id="Id13b64c6da7588bdb30c409bff52Arrow" alt=""></img>
+							</div>
+							<div class="twistyTitle" onmouseup="toggleTwisty(this)" onkeyup="toggleTwisty(this)" tabindex="0" role="menubar">Benutzereingabe Schemakonfiguration</div>
+							
+							
+
+									
+							
+							<div style="visibility: hidden; display: none;" class="groupBoxContainer" id="Id13b64c6da7588bdb30c409bff52Container">
+									<div class="tablenoborder">
+										<table summary="" width="100%" border="1" cellpadding="4" cellspacing="0" frame="border" rules="all">
+											<thead align="left">
+												<tr>
+													  <th class="firstcol" align="left" valign="top" width="*">Musterparameter</th>
+													  <th class="invisible" valign="top" width="*">Standard</th>
+													  <th valign="top" width="*">Beschreibung</th>
+												</tr>
+											</thead>
+											<tbody>
+
+														<tr>
+															<th align="left" valign="top" width="*" class="firstcol">
+																Schemakonfiguration
+															</th>
+															<td valign="top" width="2*" class="invisible">
+																				
+															</td>
+															<td valign="top" width="*">
+																<p>Geben Sie das Eingabe- und Ausgabenachrichtenschema und das globale Element für
+die ausgewählte Operation an.</p>
+<p>Das für die Eingabe ausgewählte globale Element wird als Eingabeobjekt in der relevanten
+Zuordnungsdatei verwendet. Wenn Sie beispielsweise die Erstellungsoperation auswählen und das
+Eingabeschema und das globale Element angeben, wird das globale Element als Eingabeobjekt einer
+"Create.map"-Datei verwendet. Das CRMCreate-Schema, das CRMCreate als sein globales Element
+enthält, wird als Ausgabeobjekt verwendet.</p>
+<p>Das für die Ausgabe ausgewählte globale Element wird als Ausgabeobjekt in der relevanten
+Zuordnungsrückgabedatei verwendet. Wenn Sie beispielsweise ein Ausgabeschema und ein globales
+Element für die Erstellungsoperation angegeben haben, wird das globale Element als Ausgabeobjekt
+einer "CreateReturn.map"-Datei verwendet. Das CRMCreate-Schema, das CRMCreate als sein globales
+Element enthält, wird als Eingabeobjekt verwendet.</p>
+															</td>
+														</tr>
+											</tbody>
+										</table>
+								  	</div>
+								
+
+						  	</div>
+				  		</div>
+			  		</div>
+				</div>
+			</div>
+
+	
+		
+
+			
+
+			
+
+			
+
+			
+	
+			<div class="box first">
+				<div class="TitleBox"><!-- --></div>
+				<div class="FooterBox"><!-- --></div>
+				<div class="TL"><!-- --></div>
+				<div class="TR"><!-- --></div>
+				<div class="BL"><!-- --></div>
+				<div class="BR"><!-- --></div>
+				<div class="ContentBox">
+					<div class="border">
+						<div class="groupBox" id="Id13bd5ae4ddd7c8beb4dd9a64042">
+							<div class="twisty" onmouseup="toggleTwisty(this)" onkeyup="toggleTwisty(this)" role="menubar" id="Id13bd5ae4ddd7c8beb4dd9a64042Twisty">
+								<img src="../images/twistyclosed.png"
+									name="b" id="Id13bd5ae4ddd7c8beb4dd9a64042Arrow" alt=""></img>
+							</div>
+							<div class="twistyTitle" onmouseup="toggleTwisty(this)" onkeyup="toggleTwisty(this)" tabindex="0" role="menubar">CRM-Verbindung</div>
+							
+							
+
+									
+
+									
+
+									
+
+									
+							
+							<div style="visibility: hidden; display: none;" class="groupBoxContainer" id="Id13bd5ae4ddd7c8beb4dd9a64042Container">
+									<div class="tablenoborder">
+										<table summary="" width="100%" border="1" cellpadding="4" cellspacing="0" frame="border" rules="all">
+											<thead align="left">
+												<tr>
+													  <th class="firstcol" align="left" valign="top" width="*">Musterparameter</th>
+													  <th class="invisible" valign="top" width="*">Standardwert</th>
+													  <th valign="top" width="*">Beschreibung</th>
+												</tr>
+											</thead>
+											<tbody>
+
+														<tr>
+															<th align="left" valign="top" width="*" class="firstcol">
+																CRM-Unternehmens-URL
+															</th>
+															<td valign="top" width="2*" class="invisible">
+																				
+															</td>
+															<td valign="top" width="*">
+																<p>Dieser Musterparameter definiert die Unternehmensservice-URL des CRM-Systems. Es muss eine vollständige URL des Unternehmensservice angegeben werden. Beispiele: Beim Zugriff auf CRM vor Ort http://ipaddress:port/orgName/XRMServices/2011/Organization.svc und beim Onlinezugriff auf CRM https://orgName.crm.dynamics.com/XRMServices/2011/Organization.svc.</p>
+															</td>
+														</tr>
+
+														<tr>
+															<th align="left" valign="top" width="*" class="firstcol">
+																CRM-Benutzername
+															</th>
+															<td valign="top" width="2*" class="invisible">
+																				
+															</td>
+															<td valign="top" width="*">
+																<p>Dieser Musterparameter gibt den CRM-Benutzernamen an, den Sie im CRM-System verwendet haben.</p>
+															</td>
+														</tr>
+
+														<tr>
+															<th align="left" valign="top" width="*" class="firstcol">
+																CRM-Benutzerkennwort
+															</th>
+															<td valign="top" width="2*" class="invisible">
+																				
+															</td>
+															<td valign="top" width="*">
+																<p>Dieser Musterparameter gibt das Kennwort für den angegebenen CRM-Benutzer an.</p>
+															</td>
+														</tr>
+
+														<tr>
+															<th align="left" valign="top" width="*" class="firstcol">
+																CRM-Domäne
+															</th>
+															<td valign="top" width="2*" class="invisible">
+																				
+															</td>
+															<td valign="top" width="*">
+																<p>Dieser Musterparameter gibt die CRM-Domäne an, die Sie verwendet haben.</p>
+															</td>
+														</tr>
+											</tbody>
+										</table>
+								  	</div>
+								
+
+
+
+
+						  	</div>
+				  		</div>
+			  		</div>
+				</div>
+			</div>
+
+	
+		
+
+			
+
+			
+
+			
+	
+			<div class="box first">
+				<div class="TitleBox"><!-- --></div>
+				<div class="FooterBox"><!-- --></div>
+				<div class="TL"><!-- --></div>
+				<div class="TR"><!-- --></div>
+				<div class="BL"><!-- --></div>
+				<div class="BR"><!-- --></div>
+				<div class="ContentBox">
+					<div class="border">
+						<div class="groupBox" id="Id13c5c08a1176b7982bafae61c74">
+							<div class="twisty" onmouseup="toggleTwisty(this)" onkeyup="toggleTwisty(this)" role="menubar" id="Id13c5c08a1176b7982bafae61c74Twisty">
+								<img src="../images/twistyclosed.png"
+									name="b" id="Id13c5c08a1176b7982bafae61c74Arrow" alt=""></img>
+							</div>
+							<div class="twistyTitle" onmouseup="toggleTwisty(this)" onkeyup="toggleTwisty(this)" tabindex="0" role="menubar">Protokollierung</div>
+							
+							
+
+									
+
+									
+
+									
+							
+							<div style="visibility: hidden; display: none;" class="groupBoxContainer" id="Id13c5c08a1176b7982bafae61c74Container">
+									<div class="tablenoborder">
+										<table summary="" width="100%" border="1" cellpadding="4" cellspacing="0" frame="border" rules="all">
+											<thead align="left">
+												<tr>
+													  <th class="firstcol" align="left" valign="top" width="*">Musterparameter</th>
+													  <th class="invisible" valign="top" width="*">Standard</th>
+													  <th valign="top" width="*">Beispiel</th>
+												</tr>
+											</thead>
+											<tbody>
+
+														<tr>
+															<th align="left" valign="top" width="*" class="firstcol">
+																Protokollierung ein
+															</th>
+															<td valign="top" width="2*" class="invisible">
+																				Nicht ausgewählt
+															</td>
+															<td valign="top" width="*">
+																Dieser Musterparameter bestimmt, ob die Musterinstanz den untergeordneten Nachrichtenfluss für die Protokollierung enthält.
+<p>Wenn dieser Musterparameter gelöscht wird, ist der Protokollierungs-Unterablauf nicht enthalten.</p>
+
+<p>Wenn dieser Musterparameter ausgewählt ist, müssen Sie Werte für
+<span class="msobjprop">Protokoll-WS-Manager</span> und
+<span class="msobjprop">Protokollwarteschlange</span> festlegen.</p>
+															</td>
+														</tr>
+
+														<tr>
+															<th align="left" valign="top" width="*" class="firstcol">
+																Protokoll-WS-Manager
+															</th>
+															<td valign="top" width="2*" class="invisible">
+																				
+															</td>
+															<td valign="top" width="*">
+																Dieser Musterparameter definiert den Warteschlangenmanager, der zur Protokollierung verwendet wird. Sie können diesen Parameter leer lassen, wenn der Warteschlangenmanager des Brokers für die Protokollierung verwendet wird.
+
+<p>Dieser Musterparameter ist nur erforderlich, wenn <span class="msobjprop">Protokollierung erforderlich</span> ausgewählt ist.</p>
+															</td>
+														</tr>
+
+														<tr>
+															<th align="left" valign="top" width="*" class="firstcol">
+																Protokollwarteschlange
+															</th>
+															<td valign="top" width="2*" class="invisible">
+																				
+															</td>
+															<td valign="top" width="*">
+																Dieser Musterparameter definiert die Warteschlange, die zur Protokollierung verwendet wird.
+<p>Dieser Musterparameter ist nur erforderlich, wenn <span class="msobjprop">Protokollierung erforderlich</span> ausgewählt ist.</p>
+															</td>
+														</tr>
+											</tbody>
+										</table>
+								  	</div>
+								
+
+
+
+						  	</div>
+				  		</div>
+			  		</div>
+				</div>
+			</div>
+
+	
+		
+
+			
+
+			
+
+			
+	
+			<div class="box first">
+				<div class="TitleBox"><!-- --></div>
+				<div class="FooterBox"><!-- --></div>
+				<div class="TL"><!-- --></div>
+				<div class="TR"><!-- --></div>
+				<div class="BL"><!-- --></div>
+				<div class="BR"><!-- --></div>
+				<div class="ContentBox">
+					<div class="border">
+						<div class="groupBox" id="Id13c5c0f824e96b4b34e3c6fe976">
+							<div class="twisty" onmouseup="toggleTwisty(this)" onkeyup="toggleTwisty(this)" role="menubar" id="Id13c5c0f824e96b4b34e3c6fe976Twisty">
+								<img src="../images/twistyclosed.png"
+									name="b" id="Id13c5c0f824e96b4b34e3c6fe976Arrow" alt=""></img>
+							</div>
+							<div class="twistyTitle" onmouseup="toggleTwisty(this)" onkeyup="toggleTwisty(this)" tabindex="0" role="menubar">Fehlerbehandlung</div>
+							
+							
+
+									
+
+									
+
+									
+							
+							<div style="visibility: hidden; display: none;" class="groupBoxContainer" id="Id13c5c0f824e96b4b34e3c6fe976Container">
+									<div class="tablenoborder">
+										<table summary="" width="100%" border="1" cellpadding="4" cellspacing="0" frame="border" rules="all">
+											<thead align="left">
+												<tr>
+													  <th class="firstcol" align="left" valign="top" width="*">Musterparameter</th>
+													  <th class="invisible" valign="top" width="*">Standard</th>
+													  <th valign="top" width="*">Beispiel</th>
+												</tr>
+											</thead>
+											<tbody>
+
+														<tr>
+															<th align="left" valign="top" width="*" class="firstcol">
+																Fehlerprotokollierung ein
+															</th>
+															<td valign="top" width="2*" class="invisible">
+																				Ausgewählt
+															</td>
+															<td valign="top" width="*">
+																Dieser Musterparameter bestimmt, ob die Musterinstanz Code
+										für das Einreihen von Fehlernachrichten in eine Warteschlange enthält.
+
+<p>Wenn dieser Musterparameter aktiviert ist, müssen für <span class="msobjprop">Fehler-WS-Manager</span> und <span class="msobjprop">Fehlerwarteschlange</span> Werte eingegeben werden.</p>
+															</td>
+														</tr>
+
+														<tr>
+															<th align="left" valign="top" width="*" class="firstcol">
+																Fehler-WS-Manager
+															</th>
+															<td valign="top" width="2*" class="invisible">
+																				
+															</td>
+															<td valign="top" width="*">
+																Dieser Musterparameter definiert den Warteschlangenmanager, der zur Fehlerprotokollierung verwendet wird.
+
+<p>Dieser Musterparameter ist nur erforderlich, wenn <span class="msobjprop">Fehlernachricht erforderlich</span> ausgewählt ist.</p>
+															</td>
+														</tr>
+
+														<tr>
+															<th align="left" valign="top" width="*" class="firstcol">
+																Fehlerwarteschlange
+															</th>
+															<td valign="top" width="2*" class="invisible">
+																				
+															</td>
+															<td valign="top" width="*">
+																Dieser Musterparameter definiert die Warteschlange, die für Fehlernachrichten verwendet wird.
+
+<p>Dieser Musterparameter ist nur erforderlich, wenn <span class="msobjprop">Fehlernachricht erforderlich</span> ausgewählt ist.</p>
+															</td>
+														</tr>
+											</tbody>
+										</table>
+								  	</div>
+								
+
+
+
+						  	</div>
+				  		</div>
+			  		</div>
+				</div>
+			</div>
+
+	<div id="footnotes" class="invisible">
+		<div class="box first">
+			<div class="TitleBox"><!-- --></div>
+			<div class="FooterBox"><!-- --></div>
+			<div class="TL"><!-- --></div>
+			<div class="TR"><!-- --></div>
+			<div class="BL"><!-- --></div>
+			<div class="BR"><!-- --></div>
+			<div class="ContentBox">
+				<div class="invisible" >
+					<p class="shortdesc">Zu allen Musterparametern sind die Standardwerte angegeben.
+					Wenn kein Standardwert angegeben ist, ist der Standardwert eine leere Zeichenfolge.</p>
+				</div>
+				<a href="overview.htm#anchorBack" title="Zurück">Zurück zur Spezifikation des
+Musters 'Microsoft Dynamics CRM Account Entity output: Dynamic transport input'</a>
+				<p></p>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

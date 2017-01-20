@@ -1,0 +1,667 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es-es" xml:lang="es-es">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="copyright" content="Copyright IBM Corporation 2013"/>
+    <link rel="stylesheet" type="text/css" href="./css/pattern.css"/>
+    <!-- 
+    (C) COPYRIGHT International Business Machines Corp., 2013
+    All Rights Reserved * Licensed Materials - Property of IBM
+    -->
+	
+	<meta name="abstract" content="Tablas de definiciones de parámetro para el patrón Salida de entidad de cuenta de Microsoft Dynamics CRM: entrada de transporte dinámica"/>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+	<link rel="stylesheet" type="text/css" href="../css/general.css"/>
+	<title>Parámetros de patrón para el patrón Salida de entidad de cuenta de Microsoft Dynamics CRM: entrada de transporte dinámica</title>	
+	<script language="JavaScript" src="../help/actions.js"></script>
+	
+	<!-- START NON-TRANSLATABLE -->
+	<script language="JavaScript">
+	<!--
+
+	function getParameter(location, name) {
+		name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
+		var search = "[\\?&]" + name + "=([^&#]*)";
+		var regex = new RegExp(search);
+		var results = regex.exec(location);
+		return (results == null ? true : (results[1] == "false" ? false : true));
+	}
+	
+	function addStyleSheet() {
+		if (getParameter(window.location.href, "everything") == false) {
+			var headId = document.getElementsByTagName("head")[0];         
+			var cssNode = document.createElement("link");
+			cssNode.type = "text/css";
+			cssNode.rel = "stylesheet";
+			cssNode.href = "../css/patterns.css";
+			cssNode.media = "screen";
+			headId.appendChild(cssNode);
+		}
+	}
+		
+	addStyleSheet(); // Depends on the query string!
+	
+	function getElementsByStyleClass (className) {
+  		var all = document.all ? document.all :
+    	document.getElementsByTagName('*');
+  		var elements = new Array();
+  		
+  		for (var e = 0; e < all.length; e++) {
+    		if (all[e].className == className) {
+      			elements[elements.length] = all[e];
+      		}
+      	}
+ 		return elements;
+	}
+	
+	function collapseAll() {
+		var elements = getElementsByStyleClass('twisty');
+		for (var e = 0; e < elements.length; e++) {
+			changeTwisty(elements[e], 'TWISTIE.COLLAPSEALL');
+		}
+	}
+	
+	function expandAll() {
+		var elements = getElementsByStyleClass('twisty');
+		for (var e = 0; e < elements.length; e++) {
+			changeTwisty(elements[e], 'TWISTIE.EXPANDALL');
+		}
+	}
+	
+	function toggleTwisty(group) {
+		changeTwisty(group, 'TWISTIE.TOGGLE');
+		if (typeof kc === "object" && typeof kc.resize === "function") kc.resize();
+	}
+
+	function changeTwisty(group, mode) {		
+		whichGroupId = group.parentNode.id;
+
+		whichGroupContainerId = whichGroupId + "Container";
+		whichGroupTwistyId = whichGroupId + "Twisty";
+		whichGroupTwistyImageId = whichGroupId + "Arrow";
+		groupContainerObj = document.getElementById(whichGroupContainerId);
+		twistyArrowContainerObj = document.getElementById(whichGroupTwistyId);
+		twistyArrowImageObj = document.getElementById(whichGroupTwistyImageId);
+		group.parentNode.style.height = "auto";
+
+		var toShow = false;
+		
+		if (mode == 'TWISTIE.TOGGLE') {
+			if (groupContainerObj.style.display == "none" || groupContainerObj.style.display == "") {
+				toShow = true;
+			} else {
+				toShow = false;
+			}
+		} else if (mode == 'TWISTIE.EXPANDALL') {
+			toShow = true;
+		}
+		
+		if (toShow) {
+			groupContainerObj.style.visibility = "visible";
+			groupContainerObj.style.display = "block";
+			twistyArrowImageObj.src = '../images/twistyopen.png'
+			group.parentNode.style.height = (groupContainerObj.offsetHeight + 30) +'px'; 
+	
+		} else {
+			groupContainerObj.style.visibility = "hidden";
+			groupContainerObj.style.display = "none";
+			twistyArrowImageObj.src = '../images/twistyclosed.png'
+		}
+	
+	}
+	//-->
+	</script>
+	<!-- END NON-TRANSLATABLE -->
+</head>
+<body id="com.ibm.etools.mft.pattern.dynamictocrm.pattern.parametertable">
+	<!-- Page main title -->
+  	<div id="title" class="invisible">
+		<h1 class="patterns-title">Parámetros para el patrón
+<span>Salida de entidad de cuenta de Microsoft Dynamics CRM: entrada de
+transporte dinámica</span></h1>
+  	</div>
+
+
+	
+		
+
+			
+	
+			<div class="box first">
+				<div class="TitleBox"><!-- --></div>
+				<div class="FooterBox"><!-- --></div>
+				<div class="TL"><!-- --></div>
+				<div class="TR"><!-- --></div>
+				<div class="BL"><!-- --></div>
+				<div class="BR"><!-- --></div>
+				<div class="ContentBox">
+					<div class="border">
+						<div class="groupBox" id="Id13c181831374f0d9f1c923155b7">
+							<div class="twisty" onmouseup="toggleTwisty(this)" onkeyup="toggleTwisty(this)" role="menubar" id="Id13c181831374f0d9f1c923155b7Twisty">
+								<img src="../images/twistyclosed.png"
+									name="b" id="Id13c181831374f0d9f1c923155b7Arrow" alt=""></img>
+							</div>
+							<div class="twistyTitle" onmouseup="toggleTwisty(this)" onkeyup="toggleTwisty(this)" tabindex="0" role="menubar">Selección de operación</div>
+							
+							
+
+									
+							
+							<div style="visibility: hidden; display: none;" class="groupBoxContainer" id="Id13c181831374f0d9f1c923155b7Container">
+									<div class="tablenoborder">
+										<table summary="" width="100%" border="1" cellpadding="4" cellspacing="0" frame="border" rules="all">
+											<thead align="left">
+												<tr>
+													  <th class="firstcol" align="left" valign="top" width="*">Parámetro de patrón</th>
+													  <th class="invisible" valign="top" width="*">Valor predeterminado</th>
+													  <th valign="top" width="*">Descripción</th>
+												</tr>
+											</thead>
+											<tbody>
+
+														<tr>
+															<th align="left" valign="top" width="*" class="firstcol">
+																Operación
+															</th>
+															<td valign="top" width="2*" class="invisible">
+																				
+															</td>
+															<td valign="top" width="*">
+																<p>Elija una o más de las siguientes operaciones: Crear, Recuperar, Actualizar y Suprimir. Puede
+tener flujos de mensajes relativos después de generar el patrón. Debe seleccionar al menos una operación.</p>
+															</td>
+														</tr>
+											</tbody>
+										</table>
+								  	</div>
+								
+
+						  	</div>
+				  		</div>
+			  		</div>
+				</div>
+			</div>
+
+	
+		
+
+			
+
+			
+	
+			<div class="box first">
+				<div class="TitleBox"><!-- --></div>
+				<div class="FooterBox"><!-- --></div>
+				<div class="TL"><!-- --></div>
+				<div class="TR"><!-- --></div>
+				<div class="BL"><!-- --></div>
+				<div class="BR"><!-- --></div>
+				<div class="ContentBox">
+					<div class="border">
+						<div class="groupBox" id="Id13b64c9045cf5451b09f6f1baee">
+							<div class="twisty" onmouseup="toggleTwisty(this)" onkeyup="toggleTwisty(this)" role="menubar" id="Id13b64c9045cf5451b09f6f1baeeTwisty">
+								<img src="../images/twistyclosed.png"
+									name="b" id="Id13b64c9045cf5451b09f6f1baeeArrow" alt=""></img>
+							</div>
+							<div class="twistyTitle" onmouseup="toggleTwisty(this)" onkeyup="toggleTwisty(this)" tabindex="0" role="menubar">Transporte de entrada del patrón</div>
+							
+							
+
+									
+
+									
+							
+							<div style="visibility: hidden; display: none;" class="groupBoxContainer" id="Id13b64c9045cf5451b09f6f1baeeContainer">
+									<div class="tablenoborder">
+										<table summary="" width="100%" border="1" cellpadding="4" cellspacing="0" frame="border" rules="all">
+											<thead align="left">
+												<tr>
+													  <th class="firstcol" align="left" valign="top" width="*">Parámetro de patrón</th>
+													  <th class="invisible" valign="top" width="*">Valor predeterminado</th>
+													  <th valign="top" width="*">Descripción</th>
+												</tr>
+											</thead>
+											<tbody>
+
+														<tr>
+															<th align="left" valign="top" width="*" class="firstcol">
+																Transporte de entrada
+															</th>
+															<td valign="top" width="2*" class="invisible">
+																				
+															</td>
+															<td valign="top" width="*">
+																<p>Elija uno de los tres transportes, MQ, File o HTTP, y configure detalles relativos en Detalles del transporte más abajo.</p>
+															</td>
+														</tr>
+
+														<tr>
+															<th align="left" valign="top" width="*" class="firstcol">
+																Detalles del transporte
+															</th>
+															<td valign="top" width="2*" class="invisible">
+																				
+															</td>
+															<td valign="top" width="*">
+																<p>Detalles del transporte de entrada basados en el transporte y la operación que ha
+seleccionado. Debe proporcionar el nombre de cola de entrada para el transporte MQ, el
+directorio de entrada para el transporte File y el sufijo de URL para el transporte HTTP.</p>
+															</td>
+														</tr>
+											</tbody>
+										</table>
+								  	</div>
+								
+
+
+						  	</div>
+				  		</div>
+			  		</div>
+				</div>
+			</div>
+
+	
+		
+
+			
+	
+			<div class="box first">
+				<div class="TitleBox"><!-- --></div>
+				<div class="FooterBox"><!-- --></div>
+				<div class="TL"><!-- --></div>
+				<div class="TR"><!-- --></div>
+				<div class="BL"><!-- --></div>
+				<div class="BR"><!-- --></div>
+				<div class="ContentBox">
+					<div class="border">
+						<div class="groupBox" id="Id13b64c6da7588bdb30c409bff52">
+							<div class="twisty" onmouseup="toggleTwisty(this)" onkeyup="toggleTwisty(this)" role="menubar" id="Id13b64c6da7588bdb30c409bff52Twisty">
+								<img src="../images/twistyclosed.png"
+									name="b" id="Id13b64c6da7588bdb30c409bff52Arrow" alt=""></img>
+							</div>
+							<div class="twistyTitle" onmouseup="toggleTwisty(this)" onkeyup="toggleTwisty(this)" tabindex="0" role="menubar">Configuración de esquema de entrada de usuario</div>
+							
+							
+
+									
+							
+							<div style="visibility: hidden; display: none;" class="groupBoxContainer" id="Id13b64c6da7588bdb30c409bff52Container">
+									<div class="tablenoborder">
+										<table summary="" width="100%" border="1" cellpadding="4" cellspacing="0" frame="border" rules="all">
+											<thead align="left">
+												<tr>
+													  <th class="firstcol" align="left" valign="top" width="*">Parámetro de patrón</th>
+													  <th class="invisible" valign="top" width="*">Valor predeterminado</th>
+													  <th valign="top" width="*">Descripción</th>
+												</tr>
+											</thead>
+											<tbody>
+
+														<tr>
+															<th align="left" valign="top" width="*" class="firstcol">
+																Configuración de esquema
+															</th>
+															<td valign="top" width="2*" class="invisible">
+																				
+															</td>
+															<td valign="top" width="*">
+																<p>Especifique el esquema de mensaje de entrada y de salida y el elemento
+global para la operación seleccionada.</p>
+<p>El elemento global que elija para entrada se utiliza como el objeto de entrada en el
+archivo de correlación pertinente. Por ejemplo, si elige la operación Crear y especifica
+el esquema de entrada y el elemento global, el elemento global se utiliza como el objeto de
+entrada de un archivo "Create.map". El esquema CRMCreate, que contiene CRMCreate como su
+elemento global, se utiliza como el objeto de salida.</p>
+<p>El elemento global que elija para salida se utiliza como el objeto de salida en el
+archivo de devolución de correlación pertinente. Por ejemplo, si ha especificado un
+esquema de salida y un elemento global para la operación Crear, el elemento global se
+utiliza como el objeto de salida de un archivo "CreateReturn.map". El esquema CRMCreate,
+que contiene CRMCreate como su elemento global, se utiliza como el objeto de entrada.</p>
+															</td>
+														</tr>
+											</tbody>
+										</table>
+								  	</div>
+								
+
+						  	</div>
+				  		</div>
+			  		</div>
+				</div>
+			</div>
+
+	
+		
+
+			
+
+			
+
+			
+
+			
+	
+			<div class="box first">
+				<div class="TitleBox"><!-- --></div>
+				<div class="FooterBox"><!-- --></div>
+				<div class="TL"><!-- --></div>
+				<div class="TR"><!-- --></div>
+				<div class="BL"><!-- --></div>
+				<div class="BR"><!-- --></div>
+				<div class="ContentBox">
+					<div class="border">
+						<div class="groupBox" id="Id13bd5ae4ddd7c8beb4dd9a64042">
+							<div class="twisty" onmouseup="toggleTwisty(this)" onkeyup="toggleTwisty(this)" role="menubar" id="Id13bd5ae4ddd7c8beb4dd9a64042Twisty">
+								<img src="../images/twistyclosed.png"
+									name="b" id="Id13bd5ae4ddd7c8beb4dd9a64042Arrow" alt=""></img>
+							</div>
+							<div class="twistyTitle" onmouseup="toggleTwisty(this)" onkeyup="toggleTwisty(this)" tabindex="0" role="menubar">Conexión CRM</div>
+							
+							
+
+									
+
+									
+
+									
+
+									
+							
+							<div style="visibility: hidden; display: none;" class="groupBoxContainer" id="Id13bd5ae4ddd7c8beb4dd9a64042Container">
+									<div class="tablenoborder">
+										<table summary="" width="100%" border="1" cellpadding="4" cellspacing="0" frame="border" rules="all">
+											<thead align="left">
+												<tr>
+													  <th class="firstcol" align="left" valign="top" width="*">Parámetro de patrón</th>
+													  <th class="invisible" valign="top" width="*">Valor predeterminado</th>
+													  <th valign="top" width="*">Descripción</th>
+												</tr>
+											</thead>
+											<tbody>
+
+														<tr>
+															<th align="left" valign="top" width="*" class="firstcol">
+																URL de organización de CRM
+															</th>
+															<td valign="top" width="2*" class="invisible">
+																				
+															</td>
+															<td valign="top" width="*">
+																<p>Este parámetro de patrón define el URL de servicio
+de organización del sistema CRM. Debe ser un URL completo al servicio
+de organización. Por ejemplo, acceder a CRM in situ,
+http://dirección_ip:puerto/orgName/XRMServices/2011/Organization.svc;
+acceder a CRM en línea,
+https://nombre_org.crm.dynamics.com/XRMServices/2011/Organization.svc.</p>
+															</td>
+														</tr>
+
+														<tr>
+															<th align="left" valign="top" width="*" class="firstcol">
+																Nombre de usuario de CRM
+															</th>
+															<td valign="top" width="2*" class="invisible">
+																				
+															</td>
+															<td valign="top" width="*">
+																<p>Este parámetro de patrón describe el nombre de
+usuario de CRM que ha utilizado en el sistema CRM. </p>
+															</td>
+														</tr>
+
+														<tr>
+															<th align="left" valign="top" width="*" class="firstcol">
+																Contraseña de usuario de CRM
+															</th>
+															<td valign="top" width="2*" class="invisible">
+																				
+															</td>
+															<td valign="top" width="*">
+																<p>Este parámetro de patrón define la contraseña para el usuario de CRM que ha especificado.</p>
+															</td>
+														</tr>
+
+														<tr>
+															<th align="left" valign="top" width="*" class="firstcol">
+																Dominio de CRM
+															</th>
+															<td valign="top" width="2*" class="invisible">
+																				
+															</td>
+															<td valign="top" width="*">
+																<p>Este parámetro de patrón define el dominio de CRM que ha utilizado.</p>
+															</td>
+														</tr>
+											</tbody>
+										</table>
+								  	</div>
+								
+
+
+
+
+						  	</div>
+				  		</div>
+			  		</div>
+				</div>
+			</div>
+
+	
+		
+
+			
+
+			
+
+			
+	
+			<div class="box first">
+				<div class="TitleBox"><!-- --></div>
+				<div class="FooterBox"><!-- --></div>
+				<div class="TL"><!-- --></div>
+				<div class="TR"><!-- --></div>
+				<div class="BL"><!-- --></div>
+				<div class="BR"><!-- --></div>
+				<div class="ContentBox">
+					<div class="border">
+						<div class="groupBox" id="Id13c5c08a1176b7982bafae61c74">
+							<div class="twisty" onmouseup="toggleTwisty(this)" onkeyup="toggleTwisty(this)" role="menubar" id="Id13c5c08a1176b7982bafae61c74Twisty">
+								<img src="../images/twistyclosed.png"
+									name="b" id="Id13c5c08a1176b7982bafae61c74Arrow" alt=""></img>
+							</div>
+							<div class="twistyTitle" onmouseup="toggleTwisty(this)" onkeyup="toggleTwisty(this)" tabindex="0" role="menubar">Registro</div>
+							
+							
+
+									
+
+									
+
+									
+							
+							<div style="visibility: hidden; display: none;" class="groupBoxContainer" id="Id13c5c08a1176b7982bafae61c74Container">
+									<div class="tablenoborder">
+										<table summary="" width="100%" border="1" cellpadding="4" cellspacing="0" frame="border" rules="all">
+											<thead align="left">
+												<tr>
+													  <th class="firstcol" align="left" valign="top" width="*">Parámetro de patrón</th>
+													  <th class="invisible" valign="top" width="*">Valor predeterminado</th>
+													  <th valign="top" width="*">Descripción</th>
+												</tr>
+											</thead>
+											<tbody>
+
+														<tr>
+															<th align="left" valign="top" width="*" class="firstcol">
+																Registro activado
+															</th>
+															<td valign="top" width="2*" class="invisible">
+																				No seleccionado 															</td>
+															<td valign="top" width="*">
+																Este parámetro de patrón determina si la instancia de patrón incluye el subflujo de registro.
+<p>Si no se selecciona este parámetro de patrón, el subflujo de registro no se incluye.</p>
+
+<p>Si se selecciona este parámetro de patrón, debe establecer valores para <span class="msobjprop">Gestor de colas de registro</span> y <span class="msobjprop">Cola de registro</span>.</p>
+															</td>
+														</tr>
+
+														<tr>
+															<th align="left" valign="top" width="*" class="firstcol">
+																Gestor de colas de registro
+															</th>
+															<td valign="top" width="2*" class="invisible">
+																				
+															</td>
+															<td valign="top" width="*">
+																Este parámetro de patrón define el gestor de colas que se utiliza para el registro. Puede dejar este parámetro en blanco si se utiliza el gestor de colas de intermediario para el registro.
+
+<p>Este parámetro de patrón sólo es necesario si se selecciona <span class="msobjprop">Registro necesario</span>.</p>
+															</td>
+														</tr>
+
+														<tr>
+															<th align="left" valign="top" width="*" class="firstcol">
+																Cola de registro
+															</th>
+															<td valign="top" width="2*" class="invisible">
+																				
+															</td>
+															<td valign="top" width="*">
+																Este parámetro de patrón define la cola que se utiliza para el registro.
+<p>Este parámetro de patrón sólo es necesario si se selecciona <span class="msobjprop">Registro necesario</span>.</p>
+															</td>
+														</tr>
+											</tbody>
+										</table>
+								  	</div>
+								
+
+
+
+						  	</div>
+				  		</div>
+			  		</div>
+				</div>
+			</div>
+
+	
+		
+
+			
+
+			
+
+			
+	
+			<div class="box first">
+				<div class="TitleBox"><!-- --></div>
+				<div class="FooterBox"><!-- --></div>
+				<div class="TL"><!-- --></div>
+				<div class="TR"><!-- --></div>
+				<div class="BL"><!-- --></div>
+				<div class="BR"><!-- --></div>
+				<div class="ContentBox">
+					<div class="border">
+						<div class="groupBox" id="Id13c5c0f824e96b4b34e3c6fe976">
+							<div class="twisty" onmouseup="toggleTwisty(this)" onkeyup="toggleTwisty(this)" role="menubar" id="Id13c5c0f824e96b4b34e3c6fe976Twisty">
+								<img src="../images/twistyclosed.png"
+									name="b" id="Id13c5c0f824e96b4b34e3c6fe976Arrow" alt=""></img>
+							</div>
+							<div class="twistyTitle" onmouseup="toggleTwisty(this)" onkeyup="toggleTwisty(this)" tabindex="0" role="menubar">Manejo de errores</div>
+							
+							
+
+									
+
+									
+
+									
+							
+							<div style="visibility: hidden; display: none;" class="groupBoxContainer" id="Id13c5c0f824e96b4b34e3c6fe976Container">
+									<div class="tablenoborder">
+										<table summary="" width="100%" border="1" cellpadding="4" cellspacing="0" frame="border" rules="all">
+											<thead align="left">
+												<tr>
+													  <th class="firstcol" align="left" valign="top" width="*">Parámetro de patrón</th>
+													  <th class="invisible" valign="top" width="*">Valor predeterminado</th>
+													  <th valign="top" width="*">Descripción</th>
+												</tr>
+											</thead>
+											<tbody>
+
+														<tr>
+															<th align="left" valign="top" width="*" class="firstcol">
+																Registro de errores activado
+															</th>
+															<td valign="top" width="2*" class="invisible">
+																				Seleccionado
+															</td>
+															<td valign="top" width="*">
+																Este parámetro de patrón determina si la instancia de patrón incluye código para colocar mensajes de error en una cola.
+
+<p>Si se selecciona este parámetro de patrón, se deben establecer valores para <span class="msobjprop">Gestor de colas de errores</span> y <span class="msobjprop">Cola de errores</span>.</p>
+															</td>
+														</tr>
+
+														<tr>
+															<th align="left" valign="top" width="*" class="firstcol">
+																Gestor de colas de errores
+															</th>
+															<td valign="top" width="2*" class="invisible">
+																				
+															</td>
+															<td valign="top" width="*">
+																Este parámetro de patrón define el gestor de colas que se utiliza para el registro cronológico de errores.
+
+<p>Este parámetro de patrón sólo es necesario si se selecciona <span class="msobjprop">Mensaje de error necesario</span>.</p>
+															</td>
+														</tr>
+
+														<tr>
+															<th align="left" valign="top" width="*" class="firstcol">
+																Cola de errores
+															</th>
+															<td valign="top" width="2*" class="invisible">
+																				
+															</td>
+															<td valign="top" width="*">
+																Este parámetro de patrón define la cola que se utiliza para los mensajes de error.
+
+<p>Este parámetro de patrón sólo es necesario si se selecciona <span class="msobjprop">Mensaje de error necesario</span>.</p>
+															</td>
+														</tr>
+											</tbody>
+										</table>
+								  	</div>
+								
+
+
+
+						  	</div>
+				  		</div>
+			  		</div>
+				</div>
+			</div>
+
+	<div id="footnotes" class="invisible">
+		<div class="box first">
+			<div class="TitleBox"><!-- --></div>
+			<div class="FooterBox"><!-- --></div>
+			<div class="TL"><!-- --></div>
+			<div class="TR"><!-- --></div>
+			<div class="BL"><!-- --></div>
+			<div class="BR"><!-- --></div>
+			<div class="ContentBox">
+				<div class="invisible" >
+					<p class="shortdesc">Todos los parámetros de patrón aparecen en la lista con sus valores predeterminados.
+					Cuando no se indique un valor predeterminado, éste es una serie vacía.</p>
+				</div>
+				<a href="overview.htm#anchorBack" title="Volver">Volver
+a la especificación del patrón Salida de entidad de cuenta de
+Microsoft Dynamics CRM: entrada de transporte dinámica</a>
+				<p></p>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

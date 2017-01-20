@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?NLS TYPE="org.eclipse.help.toc"?>
+<toc link_to="../com.ibm.etools.mft.pattern.saptocrm.doc/pattern_toc_dotnet_integ.xml#wmb_patterns_crm" label="Microsoft™ Dynamics CRM Integration" topic="categories/Id13b27162264408e0c6e4936cbb8/overview.htm">
+		<topic label="Dynamic transport input" href="pattern/overview.htm">
+		<topic label="Constraints on the user of the pattern" href="pattern/constraints.htm"/>
+		<topic label="Tasks to complete before applying the pattern" href="pattern/before.htm"/>
+		<topic label="Parameters" href="pattern/parameters.htm"/>
+		<topic label="Tasks to complete after generating the pattern" href="pattern/after.htm"/>
+	</topic>
+</toc>

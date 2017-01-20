@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-cn" xml:lang="zh-cn">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="copyright" content="Copyright IBM Corporation 2011"/>
+    <link rel="stylesheet" type="text/css" href="./css/pattern.css"/>
+    <!-- 
+    (C) COPYRIGHT International Business Machines Corp., 2012
+    All Rights Reserved * Licensed Materials - Property of IBM
+    -->
+
+	<title>应用 Microsoft Dynamics CRM Account Entity output: Dynamic transport input 模式之后要完成的任务</title>
+</head>
+<body id="com.ibm.etools.mft.pattern.eis.sap.idocfanout.before">
+	<h1 class="topictitle1">应用 <span>Microsoft Dynamics CRM Account Entity output: Dynamic transport input 模式</span>之后要完成的任务</h1>
+	<p class="shortdesc">在生成该模式后，您必须对其进行配置。</p>
+	<ol>
+		<li>
+			完成图形映射：<ol>
+				<li>
+					首次生成模式实例时，请打开 <span class="filepath">Summary.html</span> 文件。您必须使用图形映射文件列出的链接将 CRMReturn 数据映射到输出数据中。映射文件将根据您在模式配置过程中选择的输入和输出模式生成映射文件。
+				</li>
+				<li>
+					可选：如果在生成模式实例之后通过选择另一个模式文件或另一个全局元素修改了模式配置，然后再次单击<span class="uicontrol">生成</span>，相关映射文件将被删除。将根据更新后的模式配置创建一个新文件。
+					<p>在这种情况下，您必须重做映射链接。如果有多个映射文件与未更改的模式相关，缺省情况下，这些文件将不变。您可以选择是保留还是覆盖这些文件。生成之后，<span class="filepath">Summary.html</span> 文件将显示覆盖了哪些映射文件以及哪些映射文件未发生更改。您必须完成所有映射。</p>
+				</li>
+			</ol>
+		</li>
+		<li>必须将应用程序、库和 .NET 项目添加到代理归档 (BAR) 文件。要创建 BAR 文件，请执行以下操作：<ul>
+				<li>单击<span class="uicontrol">“文件”&gt;“新建”&gt;“BAR 文件”</span>。</li>
+				<li>输入应用程序的名称，或者从显示的列表中选择一个名称。此列表已过滤，仅会显示活动工作集中的项目。
+</li>
+				<li>输入 BAR 文件的名称。</li>
+				<li>单击“<span class="uicontrol">完成</span>”。这将创建一个扩展名为
+<span class="filepath">.bar</span> 的文件，并且该文件显示在“导航器”视图中的“代理归档”文件夹下。此时将为 BAR 文件打开编辑器。</li>
+			</ul></li>
+		<li>可选：您可以更改代理归档中的任何可配置属性。例如，安全性属性或用于创建其他实例的属性。                
+            <p>您必须确保更改的任何值都不会影响模式实例的行为。</p>
+			<p>注意：Microsoft CRM 系统的连接凭证已配置为 BAR 文件中用户定义的流属性，并且连接凭证可按明文查看。</p>
+			<p>在 BAR 文件中配置流属性。在为 <span>Microsoft Dynamics CRM Account Entity output: Dynamic transport input 模式</span>实例配置消息流之前，不需要进一步配置 BAR 文件中的消息流，但您可能想要查看部分缺省选项并配置环境更改。</p></li>
+			
+		<li>创建 <span>WebSphere MQ</span> 消息队列。如果 MQ 传输没有现有消息队列并且没有错误日志消息，请创建这些文件和消息。您可以使用程序和实用程序（如 <span class="cmdname">runmqsc</span>）在命令行上创建 <span>WebSphere MQ</span> 消息队列，也可以使用 <span>WebSphere MQ</span> Explorer 图形界面来完成创建。有关创建 <span>WebSphere MQ</span> 消息队列的更多信息，请参阅 WebSphere MQ 联机库上提供的 <cite><span>WebSphere MQ</span> Intercommunication</cite>。</li>
+		
+		<li>将 BAR 文件部署到执行组。</li>
+		<li>如果配置了错误消息，以便在发生错误时通知您，请监视并清除错误队列。</li>
+	</ol>
+	<p />
+	<p class="shortdesc">在生成并运行模式之后，您可以考虑执行下列可选任务：</p>
+	<ul>
+		<li>流当前使用不同的输入队列名称、文件目录和 URL 后缀来区分不同的操作。您可以通过对每种传输方法使用仅使用一个输入节点来修改流，并且在输入节点后添加一个过滤器或计算节点，以决定输入消息将在 Microsoft 动态 CRM 系统中调用哪项操作来满足您的业务需求。</li>
+		<li>由模式创建的流实例仅处理 Microsoft Dynamics CRM 帐户实体上的标准属性。如果您已定制 CRM 系统，以便将定制属性添加到 CRM 帐户实体，并且想要将这些属性包括在“创建”、“检索”或“更新”操作中，那么必须同时扩展图形数据映射和 .NETCompute 节点。要执行此操作：<ol>
+				<li>扩展 CRM 帐户数据模型以包括定制属性。数据由创建的应用程序中安装的 XML 模式定义。</li>
+				<li>扩展 .NETCompute node C# 代码以设置和获取定制属性。这将创建一个包含 Microsoft Visual Studio 项目的 <span class="filepath">.zip</span> 文件，此项目将应用程序的<span class="uicontrol">其他资源</span>类别中的 .NETCompute 节点的源代码保存在目录
+<span class="filepath">VisualStudioSource</span> 中。</li>
+				<li>扩展映射节点上的图形数据映射，以将已更新模式中使用附加定制属性的 SAP 数据变成为
+Microsoft Dynamics CRM 帐户实体数据格式。</li>
+			</ol>
+		</li>
+	</ul>
+
+	<p>
+		<a href="overview.htm" title="返回">返回至 Microsoft Dynamics CRM Account Entity output: Dynamic transport input 模式</a>
+	</p>
+</body>
+</html>

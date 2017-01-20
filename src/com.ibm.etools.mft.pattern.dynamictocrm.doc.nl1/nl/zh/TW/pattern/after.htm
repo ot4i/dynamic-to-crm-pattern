@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-tw" xml:lang="zh-tw">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="copyright" content="Copyright IBM Corporation 2011"/>
+    <link rel="stylesheet" type="text/css" href="./css/pattern.css"/>
+    <!-- 
+    (C) COPYRIGHT International Business Machines Corp., 2012
+    All Rights Reserved * Licensed Materials - Property of IBM
+    -->
+
+	<title>套用 Microsoft Dynamics CRM Account Entity 輸出：動態傳輸輸入型樣之後要完成的作業</title>
+</head>
+<body id="com.ibm.etools.mft.pattern.eis.sap.idocfanout.before">
+	<h1 class="topictitle1">套用 <span>Microsoft Dynamics CRM Account Entity 輸出：動態傳輸輸入型樣</span>之後要完成的作業
+	</h1>
+	<p class="shortdesc">已產生型樣之後，您必須進行配置。</p>
+	<ol>
+		<li>
+			完成圖形對映：<ol>
+				<li>
+					第一次產生型樣實例之後，開啟 <span class="filepath">Summary.html</span> 檔案。您必須使用圖形對映檔的已列出鏈結，將 CRMReturn 資料對映至輸出資料。根據您在型樣配置程序中選擇的輸入與輸出綱目，產生對映檔。
+				</li>
+				<li>
+					選用項目：如果您在透過選擇不同的綱目檔或不同的廣域元素來產生型樣實例之後修改型樣配置，然後再次按一下「<span class="uicontrol">產生</span>」，則將刪除相關的對映檔。即會根據已更新的型樣配置，建立一個新的對映檔。
+					<p>在此情況下，您必須重做對映鏈結。如果有與未變更的綱目相關的對映檔，則依預設它們不會變更。您可以選擇是否保留或改寫這些對映檔。產生之後，<span class="filepath">Summary.html</span> 檔會顯示已改寫的對映檔，以及未變更的對映檔。您必須完成所有對映。</p>
+				</li>
+			</ol>
+		</li>
+		<li>您必須將應用程式、檔案庫及 .NET 專案新增至「分配管理系統保存檔 (BAR)」。若要建立 BAR 檔：<ul>
+				<li>按一下<span class="uicontrol">「檔案」&gt;「新建」&gt;「BAR 檔」</span>。</li>
+				<li>輸入您應用程式的名稱，或從顯示的清單中進行選取。此清單已經過過濾，只會顯示作用中工作集內的專案。</li>
+				<li>輸入 BAR 檔的名稱。</li>
+				<li>按一下<span class="uicontrol">完成</span>。
+這會建立副檔名為 <span class="filepath">.bar</span> 的檔案，並在「導覽器」視圖的「分配管理系統保存檔」資料夾下顯示該檔案。即會開啟 BAR 檔的編輯器。</li>
+			</ul></li>
+		<li>選用項目：您可以變更分配管理系統保存檔中的任何可配置內容。例如，安全內容或建立其他實例的內容。                
+            <p>您必須確保所變更的任何值都不會影響型樣實例的行為。</p>
+			<p>附註：Microsoft CRM 系統的連線認證配置為 BAR 檔中使用者定義的流程內容，且連線認證可明碼檢視。</p>
+			<p>在 BAR 檔中配置流程內容。在您部署 <span>Microsoft Dynamics CRM Account Entity 輸出：動態傳輸輸入型樣</span>實例的訊息流程之前，並不需要進一步配置 BAR 檔中的訊息流程，但是您可能想要檢閱一些預設選項，以及配置環境的變更。</p></li>
+			
+		<li>建立 <span>WebSphere MQ</span> 訊息佇列。如果沒有 MQ 傳輸與錯誤日誌訊息的現有訊息佇列，則進行建立。您可以透過使用程式與共用程式（例如 <span class="cmdname">runmqsc</span>），或者透過使用 <span>WebSphere MQ</span> Explorer 圖形介面，在指令行上建立 <span>WebSphere MQ</span> 訊息佇列。如需建立 <span>WebSphere MQ</span> 訊息佇列的相關資訊，請參閱線上 WebSphere MQ 檔案庫中可用的 <cite><span>WebSphere MQ</span> Intercommunication</cite>。</li>
+		
+		<li>將 BAR 檔案部署到執行群組。</li>
+		<li>監視並清除錯誤佇列（如果您將錯誤訊息配置成發生錯誤時通知您）。</li>
+	</ol>
+	<p />
+	<p class="shortdesc">已產生並執行型樣之後，可以考量執行下列選用作業：</p>
+	<ul>
+		<li>流程目前使用不同的輸入佇列名稱、檔案目錄及 URL 字尾來識別不同的作業。您可以透過對每一個傳輸僅使用一個輸入節點來修改流程，以及在輸入節點之後新增過濾器或計算節點，以決定輸入訊息將在 Microsoft Dynamics CRM 系統中呼叫哪個作業來滿足您的商業需要。</li>
+		<li>型樣建立的流程實例只會處理 Microsoft Dynamics CRM Account Entity 上的標準屬性。如果您已自訂 CRM 系統，將自訂屬性新增至 CRM Account Entity，且您想要在「建立」、「擷取」或「更新」作業中包括這些屬性，則必須延伸圖形資料對映與 .NETCompute 節點。若要執行此動作：<ol>
+				<li>延伸 CRM 帳戶資料模型以包括自訂屬性。該資料由所建立應用程式中安裝的 XML 綱目所定義。</li>
+				<li>延伸 .NETCompute 節點 C# 程式碼，以設定及取得自訂屬性。這會建立 <span class="filepath">.zip</span> 檔案，其中包含在目錄 <span class="filepath">VisualStudioSource</span> 中，保留應用程式<span class="uicontrol">其他資源</span>種類中 .NETCompute 節點的原始碼的 Microsoft Visual Studio 專案。</li>
+				<li>在對映節點上延伸圖形資料對映，以使用 Microsoft Dynamics CRM Account Entity 資料格式已更新綱目中的其他自訂屬性來轉換輸入資料。</li>
+			</ol>
+		</li>
+	</ul>
+
+	<p>
+		<a href="overview.htm" title="上一步">回到 Microsoft Dynamics CRM Account Entity 輸出：動態傳輸輸入型樣</a>
+	</p>
+</body>
+</html>

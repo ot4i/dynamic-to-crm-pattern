@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %Fragment.name
+Bundle-SymbolicName: com.ibm.etools.mft.pattern.dynamictocrm.nl1
+Bundle-Version: 10.0.300.v20151113-1154
+Bundle-Vendor: IBM
+Fragment-Host: com.ibm.etools.mft.pattern.dynamictocrm;bundle-version="10.0.300.v20151113-1154"

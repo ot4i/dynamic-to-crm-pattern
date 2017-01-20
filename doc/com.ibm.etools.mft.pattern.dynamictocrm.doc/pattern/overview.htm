@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <link rel="stylesheet" type="text/css" href="./css/pattern.css"/>
+   <!-- 
+    (C) COPYRIGHT International Business Machines Corp., 2012
+    All Rights Reserved * Licensed Materials - Property of IBM
+    -->
+        <title>Microsoft Dynamics CRM Account Entity output: Dynamic transport input pattern</title>
+    </head>
+    <body>
+        <h1 class="topictitle1">Microsoft Dynamics CRM Account Entity output: Dynamic transport input pattern</h1>
+
+        <div>
+            <p class="shortdesc"></p>
+        </div>
+        <p>Use the Microsoft Dynamics CRM Account Entity output: Dynamic transport input pattern to process user-defined MQ, File or HTTP input messages and map them into Create, Retrieve, Update and Delete operations onto standard Microsoft Dynamics CRM Account Entities.</p>
+		
+		<p>Use this pattern when:</p>
+		<ul>
+		<li>
+You require MQ, File and HTTP transports to operate on an Account Entity in Microsoft Dynamics CRM.
+</li>
+</ul>
+
+        <p>When creating an instance of this pattern, you can choose a MQ, File, or HTTP transport to use any combination out of the four operations: Create, Retrieve, Update and Delete. The application can have the following capabilities:</p>
+	<ul>
+		<li>Create and populate a Microsoft Dynamics CRM Account Entity when a MQ/File/HTTP create event is received.</li>
+		<li>Read a Microsoft Dynamics CRM Account Entity and return the data when a MQ/File/HTTP retrieve event is received.</li>
+		<li>Update a Microsoft Dynamics CRM Account Entity when a MQ/File/HTTP update event is received.</li>
+		<li>Delete a Microsoft Dynamics CRM Account Entity when a MQ/File/HTTP delete event is received.</li>
+	</ul>
+
+    <div class="image">
+        <img src="DynamicInputCRMPattern.gif" alt="A diagram showing the behavior of the pattern. MQ/File/HTTP events are transformed and issued as Create, Retrieve, Update or Delete operations to Microsoft Dynamics CRM."/>
+    </div>
+
+        <div class="section">
+            <h2 class="sectiontitle">Solution</h2>
+        </div>
+	<p>The solution is to implement an application, a library and a .NET project.
+	<ul>
+	<li>The application contains a message flow that provides MQ, File, or HTTP input nodes to receive Create, Retrieve, Update, and Delete events, and maps them into the relative Microsoft Dynamics CRM Account Entity data using a graphical data map. The input object for the map is specified by the input global element for each operation in the pattern editor.</li>
+	<li>The message flow invokes the .NETCompute node that connects to Microsoft Dynamics CRM, and implements the early binding programming style to transfer the Account Entity data from the Mapping node. The CRM response data received by the .NETCompute node is passed to an additional Mapping node. The Mapping node uses an addition graphical data map to transform the data into a specific format. The user specifies this format in the output schema for returning a response to the relative MQ or File output node, or HTTP Reply node, using the pattern editor.</li>
+	<li>The library contains the schema files that are chosen by the user for the application to refer to, and all of the map files. The user can also choose to refer to other libraries in the workspace to use the schemas within those libraries.</li>
+	<li>The .NET project contains the assembly files, and relative configuration files, used by the .NETCompute node in the application.</li>
+	</ul>
+	</p>
+<p>If you configure the pattern instance to enable error messages, the solution provides generic error processing logic. If there is an exception caught by the message flow input node, the error handling subflow constructs an error message, putting the message into the trace and "ERROR" queue.
+</p>
+
+	<p>The connection details for the Microsoft Dynamics CRM system are configured by user-defined properties on the message flow. Note that the password will be set in clear text.</p>
+		<div class="familylinks">
+			<a name="anchorBack"></a>
+			<div class="section">
+				<h2 class="sectiontitle">Related tasks</h2>
+			</div>
+			<p>Read the following section for information about how to apply and use this pattern.</p>
+		</div>
+		<div>
+            <a href="constraints.htm" title="Constraints on the use of the pattern.">Constraints on the use of the pattern</a>
+        </div>
+		<div>
+			<a href="before.htm">Tasks to complete before applying the pattern</a>
+		</div>
+		<div>
+			<a href="parameters.htm">Parameters for the pattern</a>
+		</div>
+		<div>
+            <a href="after.htm" title="">Tasks to complete after generating the pattern</a>
+        </div>
+		
+    </body>
+</html>

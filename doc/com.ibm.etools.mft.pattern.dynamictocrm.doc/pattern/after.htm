@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-us" xml:lang="en-us">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="copyright" content="Copyright IBM Corporation 2011"/>
+    <link rel="stylesheet" type="text/css" href="./css/pattern.css"/>
+    <!-- 
+    (C) COPYRIGHT International Business Machines Corp., 2012
+    All Rights Reserved * Licensed Materials - Property of IBM
+    -->
+
+	<title>Tasks to complete after applying the Microsoft Dynamics CRM Account Entity output: Dynamic transport input pattern</title>
+</head>
+<body id="com.ibm.etools.mft.pattern.eis.sap.idocfanout.before">
+	<h1 class="topictitle1">Tasks to complete after applying the <span>Microsoft Dynamics CRM Account Entity output: Dynamic transport input pattern</span>
+	</h1>
+	<p class="shortdesc">After you have generated the pattern, you must configure it.</p>
+	<ol>
+		<li>
+			Complete the graphical mappings:
+			<ol>
+				<li>
+					After generating the pattern instance for the first time, open the <span class="filepath">Summary.html</span> file. You must map the CRMReturn data into the output data using the listed links of graphical mapping files. The mapping files are generated according to the input and output schema you chose in the pattern configuration process.
+				</li>
+				<li>
+					Optional: If you modify the pattern configuration after generating the pattern instance by choosing a different schema file or different global element, and then click <span class="uicontrol">Generate</span> again, the related map file will be deleted. A new one is created, based on your updated pattern configuration. 
+					<p>In this case, you must redo the mapping links. If there are mapping files related to the unchanged schema, they are unchanged by default. You can choose whether to retain or overwrite them. After generation, the <span class="filepath">Summary.html</span> file displays which map files are overwritten, and which ones are unchanged. You must complete all of the mappings.</p>
+				</li>
+			</ol>
+		</li>
+		<li>You must add the application, library and .NET project to a Broker Archive (BAR) file. To create the BAR file:
+			<ul>
+				<li>Click <span class="uicontrol">File &gt; New &gt; BAR
+						file</span>.</li>
+				<li>Enter the name of your application or select one from the
+					displayed list. The list is filtered to show only projects in the
+					active working set.</li>
+				<li>Enter a name for your BAR file.</li>
+				<li>Click <span class="uicontrol">Finish</span>. This creates a file with
+					the <span class="filepath">.bar</span> extension, and is displayed in the Navigator view, under the Broker Archives folder. The editor for the BAR file opens.</li>
+			</ul></li>
+		<li>Optional: You can change any of the configurable properties in the broker archive. For example, properties for security or creating additional instances.                 
+            <p>You must ensure that any values that you change do not affect the behavior of the pattern instance.</p>
+			<p>Note: The connection credentials for the Microsoft CRM system are configured as user-defined properties of the flow in the BAR file and the connection credentials are viewable in clear text.</p>
+			<p>Configure the flow properties in the BAR file. Further configuration of the message flow in the BAR file is not required before you deploy the message flows for your <span>Microsoft Dynamics CRM Account Entity output: Dynamic transport input pattern</span> instance, but you might want to review some of the default options and configure changes for your environment.</p></li>
+			
+		<li>Create <span>WebSphere MQ</span> message queues. If there are no existing message queues for the MQ transport and error log messages, create these. You can create <span>WebSphere MQ</span> message queues on the command line by using programs and utilities such as <span class="cmdname">runmqsc</span>, or by using the <span>WebSphere MQ</span> Explorer graphical interface. For more information about creating <span>WebSphere MQ</span> message queues, see <cite><span>WebSphere MQ</span> Intercommunication</cite>, available on the WebSphere MQ library online.</li>
+		
+		<li>Deploy the BAR file to an execution group.</li>
+		<li>Monitor and clear the error queue, if you have error messages configured to notify you when errors occur.</li>
+	</ol>
+	<p />
+	<p class="shortdesc">After you have generated and run the pattern, you might consider performing the following optional tasks:</p>
+	<ul>
+		<li>The flow currently uses different input queue names, file directories and URL suffixes to distinguish different operations. You can modify the flow by using only one input node for each transport, and add a filter or compute node after the input node, to decide which operation the input message will invoke in the Microsoft Dynamics CRM system to meet your business needs.
+		</li>
+		<li>The flow instance created by the pattern only processes the standard attributes on the Microsoft Dynamics CRM Account Entity. If you have customized your CRM system to add custom attributes to the CRM Account Entity, and you want to include these in the Create, Retrieve or Update operations, you must extend both the graphical data maps and the .NETCompute nodes. To do this:
+			<ol>
+				<li>Extend the CRM account data models to include the custom attributes. The data is defined by the XML schema installed in the created application.</li>
+				<li>Extend the .NETCompute node C# code to set and get the custom attributes. This creates a <span class="filepath">.zip</span> file containing the Microsoft Visual Studio project holding the source code for the .NETCompute nodes in the <span class="uicontrol">other resources</span> category of the application, in the directory <span class="filepath">VisualStudioSource</span>.</li>
+				<li>Extend the graphical data map on the mapping nodes to transform the input data using the additional custom attributes in the updated schema for the Microsoft Dynamics CRM Account Entity data format.</li>
+			</ol>
+		</li>
+	</ul>
+
+	<p>
+		<a href="overview.htm" title="Back">Back to Microsoft Dynamics CRM Account Entity output: Dynamic transport input pattern</a>
+	</p>
+</body>
+</html>

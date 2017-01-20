@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-us" xml:lang="pt-br">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="copyright" content="Copyright IBM Corporation 2011"/>
+    <link rel="stylesheet" type="text/css" href="./css/pattern.css"/>
+    <!-- 
+    (C) COPYRIGHT International Business Machines Corp., 2012
+    All Rights Reserved * Licensed Materials - Property of IBM
+    -->
+    <title>Tarefas a Serem Concluídas antes da Aplicação do Padrão de Saída da Entidade de Conta do Microsoft Dynamics CRM: Entrada de Transporte Dinâmico</title>
+</head>
+<body>
+    <h1 class="topictitle1">Tarefas a Serem Concluídas antes da Aplicação do Padrão de Saída da Entidade de Conta do Microsoft Dynamics CRM: Entrada de Transporte Dinâmico</h1>
+    <div class="p">
+        <p class="shortdesc">Antes de aplicar o padrão para produzir uma instância padrão, conclua as seguintes tarefas:</p>
+    </div>
+    <ul>
+        <li>
+            Assegure que esse padrão satisfaça seus requisitos de negócios e pode ser suportado por aplicativos do solicitante e do fornecedor. 
+        </li>
+        <li>
+			Escolha um nome para a instância padrão. Identifique o propósito do aplicativo padrão para que seja possível
+    		escolher um nome apropriado. 
+        </li>
+        <li>
+        	Decida que transporte você deseja usar, e prepare as configurações de detalhe do transporte. Por exemplo, crie as filas de mensagem necessárias para o transporte do WebSphere MQ, crie os diretórios de arquivo de entrada para o transporte de arquivos, ou escolha o sufixo da URL para o transporte de HTTP.
+        </li>
+        <li>
+        	Prepare os esquemas de entrada e saída para cada operação.
+        </li>
+        <li>
+			Prepare as informações de conexão de sistema necessárias do Microsoft Dynamics CRM. Isso inclui:
+			<ul>
+				<li>CRMDomain</li>
+				<li>CRMURI</li>
+				<li>CRMUser</li>
+				<li>Senha do CRMUser</li>
+			</ul>
+		</li>
+        <li>
+			Decida se você necessita de mensagens de login e de erro. Se precisar de tais mensagens, você deve decidir a que gerenciador de fila e fila deve enviar as mensagens. É possível enviar mensagens a uma fila geral que é usada
+            por diversos fluxos de mensagens ou é possível usar uma fila especificamente para a instância padrão. 
+        </li>
+    </ul>
+    <p>
+        <a href="overview.htm#anchor1" title="Voltar">Voltar ao Padrão de Saída de Entidade de Conta do Microsoft Dynamics CRM: Entrada
+de Transporte Dinâmico</a>
+    </p>
+</body>
+</html>

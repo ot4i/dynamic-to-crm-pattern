@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <link rel="stylesheet" type="text/css" href="./css/pattern.css"/>
+   <!-- 
+    (C) COPYRIGHT International Business Machines Corp., 2012
+    All Rights Reserved * Licensed Materials - Property of IBM
+    -->
+        <title>「Microsoft Dynamics CRM Account Entity 出力: 動的トランスポート入力」パターン</title>
+    </head>
+    <body>
+        <h1 class="topictitle1">「Microsoft Dynamics CRM Account Entity 出力: 動的トランスポート入力」パターン</h1>
+
+        <div>
+            <p class="shortdesc"></p>
+        </div>
+        <p>「Microsoft Dynamics CRM Account Entity 出力: 動的トランスポート入力」パターンを使用して、ユーザー定義の MQ、ファイル、または HTTP の入力メッセージを処理し、それらを標準の Microsoft Dynamics CRM Account Entity に対する「作成」、「取得」、「更新」、および「削除」の操作にマップします。</p>
+		
+		<p>以下のような場合に、このパターンを使用します。</p>
+		<ul>
+		<li>
+Microsoft Dynamics CRM の Account Entity に対する操作には、MQ、ファイル、および HTTP のトランスポートが必要です。
+</li>
+</ul>
+
+        <p>このパターンのインスタンスを作成する際、MQ、ファイル、または HTTP のトランスポートを選択して、「作成」、「取得」、「更新」、および「削除」の 4 つの操作を任意の組み合わせで使用できます。アプリケーションには以下の機能を持たせることができます。</p>
+	<ul>
+		<li>MQ/ファイル/HTTP 作成イベントの受信時に Microsoft Dynamics CRM Account Entity を作成してデータを取り込みます。</li>
+		<li>MQ/ファイル/HTTP 取得イベントの受信時に Microsoft Dynamics CRM Account Entity を読み取り、データを返します。</li>
+		<li>MQ/ファイル/HTTP 更新イベントの受信時に Microsoft Dynamics CRM Account Entity を更新します。</li>
+		<li>MQ/ファイル/HTTP 削除イベントの受信時に Microsoft Dynamics CRM Account Entity を削除します。</li>
+	</ul>
+
+    <div class="image">
+        <img src="DynamicInputCRMPattern.gif" alt="パターンの動作を示す図。MQ/ファイル/HTTP イベントは変換され、Microsoft Dynamics CRM に対する「作成」、「取得」、「更新」、または「削除」の操作として発行されます。"/>
+    </div>
+
+        <div class="section">
+            <h2 class="sectiontitle">ソリューション</h2>
+        </div>
+	<p>ソリューションは、アプリケーション、ライブラリー、および .NET プロジェクトを実装することです。<ul>
+	<li>アプリケーションには、「作成」、「取得」、「更新」、および「削除」のイベントを受信するための MQ、ファイル、または HTTP 入力ノードを提供して、グラフィカル・データ・マップを使用してそれらのイベントを関連する Microsoft Dynamics CRM Account Entity データにマップするメッセージ・フローが入っています。
+マップ用の入力オブジェクトは、パターン・エディターで各操作の入力グローバル・エレメントによって指定されます。</li>
+	<li>メッセージ・フローは .NETCompute ノードを呼び出します。このノードは、Microsoft Dynamics CRM に接続して、Mapping ノードから Account Entity データを転送するための早期バインディング・プログラミング・スタイルを実装します。
+.NETCompute ノードが受信する CRM 応答データは、追加の Mapping ノードに渡されます。Mapping ノードは、追加のグラフィカル・データ・マップを使用してデータを特定のフォーマットに変換します。ユーザーは、パターン・エディターを使用して、関連する MQ またはファイル出力ノード、あるいは HTTP Reply ノードに応答を返すための出力スキーマでこのフォーマットを指定します。</li>
+	<li>ライブラリーには、ユーザーによって参照先のアプリケーション用に選択されたスキーマ・ファイルと、すべてのマップ・ファイルが格納されています。ユーザーは、ワークスペースで他のライブラリーを参照して、それらのライブラリー内でスキーマを使用することも選択できます。</li>
+	<li>.NET プロジェクトには、アセンブリー・ファイルと、アプリケーションで .NETCompute ノードによって使用される関連構成ファイルが入っています。</li>
+	</ul>
+	</p>
+<p>エラー・メッセージを有効にするようにパターン・インスタンスを構成した場合、ソリューションは汎用エラー・メッセージ処理ロジックを提供します。メッセージ・フロー入力ノードによってキャッチされた例外がある場合、エラー処理サブフローはエラー・メッセージを作成して、そのメッセージをトレースおよび「ERROR」キューに入れます。
+</p>
+
+	<p>Microsoft Dynamics CRM システムの接続の詳細は、メッセージ・フローでユーザー定義プロパティーによって構成されます。
+パスワードが平文で設定されることに注意してください。</p>
+		<div class="familylinks">
+			<a name="anchorBack"></a>
+			<div class="section">
+				<h2 class="sectiontitle">関連タスク</h2>
+			</div>
+			<p>このパターンの適用と使用の方法については、以下のセクションをお読みください。</p>
+		</div>
+		<div>
+            			<a href="constraints.htm" title="パターンの使用に関する制約">パターンの使用に関する制約</a>
+</div>
+		<div>
+			<a href="before.htm">パターンを適用する前に完了するタスク</a>
+		</div>
+		<div>
+			<a href="parameters.htm">パターンのパラメーター</a>
+		</div>
+		<div>
+            <a href="after.htm" title="">パターンを生成した後に完了するタスク</a></div>
+		
+    </body>
+</html>

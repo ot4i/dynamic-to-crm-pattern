@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <link rel="stylesheet" type="text/css" href="./css/pattern.css"/>
+   <!-- 
+    (C) COPYRIGHT International Business Machines Corp., 2012
+    All Rights Reserved * Licensed Materials - Property of IBM
+    -->
+        <title>Sortie d'entité de compte Microsoft Dynamics CRM : modèle d'entrée de transport dynamique</title>
+    </head>
+    <body>
+        <h1 class="topictitle1">Sortie d'entité de compte Microsoft Dynamics CRM : modèle d'entrée de transport dynamique</h1>
+
+        <div>
+            <p class="shortdesc"></p>
+        </div>
+        <p>Utilisez la sortie d'entité de compte Microsoft Dynamics CRM : modèle d'entrée de transport dynamique pour traiter les messages d'entrée MQ, File ou HTTP définis par l'utilisateur et les mapper en opération de création, d'extraction, de mise à jour et de suppression sur des entités de compte Microsoft  Dynamics CRM standard.</p>
+		
+		<p>Utilisez ce modèle lorsque :</p>
+		<ul>
+		<li>
+Vous avez besoin que les transports MQ, de fichier et HTTP fonctionnent sur une entité de compte dans Microsoft Dynamics CRM.
+</li>
+</ul>
+
+        <p>Lors de la création d'une instance de ce modèle, vous pouvez choisir un transport MQ, File ou HTTP afin d'utiliser n'importe quelle combinaison parmi les quatre opérations suivantes : création, extraction, mise à jour et suppression. L'application peut comporter les fonctionnalités suivantes :</p>
+	<ul>
+		<li>Créer et remplir une entité de compte Microsoft Dynamics CRM lorsqu'un événement de création MQ/File/HTTP est reçu.</li>
+		<li>Lire une entité de compte Microsoft Dynamics CRM et renvoyer les données lorsqu'un événement d'extraction MQ/File/HTTP est reçu.</li>
+		<li>Mettre à jour une entité de compte Microsoft Dynamics CRM lorsqu'un événement de mise à jour MQ/File/HTTP est reçu.</li>
+		<li>Supprimer une entité de compte Microsoft Dynamics CRM lorsqu'un événement de suppression MQ/File/HTTP est reçu.</li>
+	</ul>
+
+    <div class="image">
+        <img src="DynamicInputCRMPattern.gif" alt="Diagramme montrant le comportement du modèle. Les événements  MQ/File/HTTP sont transformés en opérations de création, d'extraction, de mise à jour et de suppression sur Microsoft Dynamics CRM."/>
+    </div>
+
+        <div class="section">
+            <h2 class="sectiontitle">Solution</h2>
+        </div>
+	<p>La solution consiste à implémenter une application, une bibliothèque et un projet .NET.
+	<ul>
+	<li>L'application contient un flux de messages qui fournit des noeuds d'entrée MQ, File ou HTTP pour recevoir les événements de création, d'extraction, de mise à jour et de suppression et les mapper sur les données d'entité de compte Microsoft Dynamics CRM relatives à l'aide d'une mappe de données graphiques. L'objet d'entrée de la mappe est spécifié par l'élément global d'entrée pour chaque opération dans l'éditeur de modèle.</li>
+	<li>Le flux de messages appelle le noeud .NETCompute qui se connecte à Microsoft Dynamics CRM et implémente le style de programmation d'attribution a priori pour transférer les données d'entité de compte depuis le noeud Mappage. Les données de réponse CRM reçues par le noeud .NETCompute sont transmises à un noeud Mappage supplémentaire. Ce dernier utilise une mappe de données graphiques supplémentaire pour transformer les données en un format spécifique. L'utilisateur spécifie ce format dans le schéma de sortie pour renvoyer une réponse au noeud de sortie MQ ou File relatif ou au noeud de réponse HTTP en utilisant l'éditeur de modèles.</li>
+	<li>La bibliothèque contient les fichiers de schéma qui sont choisis par l'utilisateur pour que l'application y fasse référence et tous les fichiers de mappe. L'utilisateur peut également choisir de faire référence à d'autres bibliothèques dans l'espace de travail afin d'utiliser les schémas dans celles-ci.</li>
+	<li>Le projet .NET contient les fichiers d'assemblage et les fichiers de configuration relatifs utilisés par le noeud .NETCompute dans l'application.</li>
+	</ul>
+	</p>
+<p>Si vous configurez l'instance du modèle pour activer les messages d'erreur, la solution fournit une logique de traitement d'erreurs génériques. Si une exception est interceptée par le noeud d'entrée de flux de messages, le flux secondaire de traitement des erreurs construit un message d'erreur en plaçant ce dernier dans la file d'attente de trace et d'ERREUR.
+</p>
+
+	<p>Les détails de connexion pour le système Microsoft Dynamics CRM sont configurés par des propriétés définies par l'utilisateur sur le flux de messages. Sachez que le mot de passe est défini en texte clair.</p>
+		<div class="familylinks">
+			<a name="anchorBack"></a>
+			<div class="section">
+				<h2 class="sectiontitle">Tâches connexes</h2>
+			</div>
+			<p>Consultez la section suivante qui contient des informations sur l'application et l'utilisation de ce modèle.</p>
+		</div>
+		<div>
+            <a href="constraints.htm" title="Contraintes d'utilisation du modèle"> 			Contraintes d'utilisation du modèle</a>
+        </div>
+		<div>
+			<a href="before.htm">Tâches à exécuter avant d'appliquer le modèle</a>
+		</div>
+		<div>
+			<a href="parameters.htm">Paramètres destinés au modèle</a>
+		</div>
+		<div>
+            <a href="after.htm" title="">Tâches à exécuter après avoir généré le modèle</a>
+        </div>
+		
+    </body>
+</html>
