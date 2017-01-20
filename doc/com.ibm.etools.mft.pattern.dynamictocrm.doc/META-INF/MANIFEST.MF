@@ -1,7 +1,0 @@
-Manifest-Version: 1.0
-Bundle-ManifestVersion: 2
-Bundle-Name: %Plugin.name
-Bundle-SymbolicName: com.ibm.etools.mft.pattern.dynamictocrm.doc;singleton:=true
-Bundle-Version: 10.0.300.v20151113-1154
-Bundle-Vendor: IBM
-Bundle-Localization: plugin
